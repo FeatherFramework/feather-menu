@@ -24,6 +24,7 @@ jobs:
       - uses: vimtor/action-zip@v1
         with:
           files: /client /fxmanifest.lua license.md README.md version /ui/dist
+          recursive: false
           dest: vorp_menu.zip
       - name: get-npm-version
         id: package-version
