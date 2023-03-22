@@ -11,9 +11,9 @@ Join the [VORP Community Discord](https://discord.gg/23MPbQ6)
 TBD
 
 ## Installation
-1. Download this repo/codebase
-2. Extract and place `vorp_ui` into your `resources` folder
-3. Add `ensure vorp_ui` to your `server.cfg` file
+1. Download the latest release `vorp_menu.zip` at [/releases/latest](https://github.com/AndrewR3K/vorp_menu/releases/latest)
+2. Extract and place `vorp_menu` into your `resources` folder
+3. Add `ensure vorp_menu` to your `server.cfg` file
 4. Restart your server (unless you have nightly restarts)
 
 ## How-to-configure
@@ -25,30 +25,5 @@ All configurations available in `/config.lua`
 ## Dependency
 TBD
 
-## TODO: Make a github action to build, clean, and bundle the app for release on pushes to main
-
-# Tasks left for phase 1
-- [ x ] Draggable
-- [ x ] Component: Button
-- [ x ] Component: Display Text
-- [   ] Component: Display Image
-- [   ] Component: Slider
-- [   ] Component: Toggle
-- [   ] Component: Arrow Selector
-- [ x ] Multiple namespaces (menus)
-- [ x ] Last Page
-- [ x ] Next Page
-- [   ] Custom Style
-- [   ] Custom HTML
-- [   ] Resolution support (4k, 2k, 1080, 720)
-- [ x ] Close Menus
-- [   ] Save draggable location
-- [   ] Controller support
-
-
-RENAME TO VORP_MENU
-
-# Tasks for post phase 1
-- [   ] Custom Components?
-- [   ] Better build tool
+# Tasks for post phase 2
 - [   ] Add prototype fake "DUI"

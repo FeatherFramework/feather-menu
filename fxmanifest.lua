@@ -11,18 +11,20 @@ client_scripts {
 }
 
 ui_page {
-    "ui/shim.html"
+    "ui/dist/index.html"
 }
 
 files {
-    "ui/shim.html",
+    "ui/dist/index.html",
     "ui/dist/js/*.*",
-    "ui/dist/css/*.*"
+    "ui/dist/css/*.*",
+    "ui/dist/fonts/*.*",
+    "ui/dist/img/*.*"
 }
 
 export "initiate"
 
-version '0.0.1'
+version '1.2.3'
 -- vorp_checker 'yes'
 -- vorp_name '^4Resource version Check^3'
 -- vorp_github 'https://github.com/VORPCORE/vorp_ui'

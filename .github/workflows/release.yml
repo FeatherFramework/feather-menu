@@ -23,7 +23,7 @@ jobs:
         working-directory: ./ui
       - uses: vimtor/action-zip@v1
         with:
-          files: /
+          files: /client /fxmanifest.lua license.md README.md version /ui/dist
           dest: vorp_menu.zip
       - name: get-npm-version
         id: package-version
@@ -38,4 +38,3 @@ jobs:
           title: "Release ${{ steps.package-version.outputs.current-version}}"
           files: |
             vorp_menu.zip
-            README.md
