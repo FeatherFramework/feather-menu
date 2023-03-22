@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Shim</title>
+  </head>
+  <body>
+    <iframe src="http://localhost:8080" style="position:absolute; top:0; left:0; width: 100vw; height: 100vh; margin: 0; padding: 0" id="shimapp" frameBorder="0"></iframe>
+    <script>
+      window.addEventListener("message", function (event) {
+        let iframe = document.getElementById("shimapp").contentWindow;
+        iframe.postMessage(event.data, "*");
+      });
+    </script>
+  </body>
+</html>
