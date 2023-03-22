@@ -1,12 +1,12 @@
-name: Main
+name: "pre-release"
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - "master"
 
 jobs:
-  build:
+  pre-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,16 +15,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      
-      
-      
-      
-      
       - name: Install Node Modules
         run: yarn install
         working-directory: ./ui
       - name: Build Application
         run: yarn run build
         working-directory: ./ui
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - uses: vimtor/action-zip@v1
+        with:
+          files: /
+          dest: vorp_menu.zip
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            vorp_menu.zip
