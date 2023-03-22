@@ -11,15 +11,15 @@ client_scripts {
 }
 
 ui_page {
-    "ui/dist/index.html"
+    "ui/shim.html"
 }
 
 files {
-    "ui/dist/index.html",
-    "ui/dist/js/*.*",
-    "ui/dist/css/*.*",
-    "ui/dist/fonts/*.*",
-    "ui/dist/img/*.*"
+    "ui/shim.html",
+    "ui/js/*.*",
+    "ui/css/*.*",
+    "ui/fonts/*.*",
+    "ui/img/*.*"
 }
 
 export "initiate"
