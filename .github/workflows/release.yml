@@ -1,4 +1,4 @@
-name: "pre-release"
+name: "release"
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  pre-release:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
         working-directory: ./ui
       - uses: vimtor/action-zip@v1
         with:
-          files: /client /fxmanifest.lua license.md README.md version /ui/dist
+          files: fxmanifest.lua license.md README.md version ui/dist client
           recursive: false
           dest: vorp_menu.zip
       - name: get-npm-version
