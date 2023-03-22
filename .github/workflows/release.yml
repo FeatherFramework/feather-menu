@@ -8,21 +8,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Set Node.js 16.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
+      
+      
+      
+      
+      
       - name: Install Node Modules
+        run: yarn install
         working-directory: ./ui
-        run: npm ci
       - name: Build Application
+        run: yarn run build
         working-directory: ./ui
-        run: npm run build
       - name: Release
         uses: softprops/action-gh-release@v1
