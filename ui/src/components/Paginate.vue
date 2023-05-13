@@ -1,11 +1,17 @@
 <template>
     <div :style="element.style || ''">
-        <div :style="compstyle"
-            :class="{ 'page-overflow': element.mode === 'scroll', 'page-paged': element.mode === 'paged' }">
+        <div :style="compstyle"  v-if="element.mode === 'paged'" class="page-paged">
             <div v-for="(pag, i) in filteredelements" :key="'paginated' + pd.page.namespace + i">
                 <AllComponents :element="pag" :index="i" :pd="pd"></AllComponents>
             </div>
         </div>
+
+        <div :style="compstyle"  v-if="element.mode === 'scroll'" class="page-overflow">
+            <div v-for="(pag, i) in element.elements" :key="'paginated' + pd.page.namespace + i">
+                <AllComponents :element="pag" :index="i" :pd="pd"></AllComponents>
+            </div>
+        </div>
+
         <VBottomLine></VBottomLine>
         <div class="pagination-controls" v-if="element.mode === 'paged'">
             <div class="page-control">

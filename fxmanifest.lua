@@ -4,7 +4,6 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 lua54 'yes'
 author "VORP @Bytesizd"
 
-
 client_scripts {
     'client/services/*.lua',
     'client/main.lua'

@@ -151,6 +151,17 @@ function VorpMenu.Register(type, namespace, name, data, submit, cancel, change, 
         VorpMenu.Show(self.namespace, self.name, self.type, self.data)
     end
 
+    --- Override data of a given sub-element
+    ---@param parentindex any The index of the root element
+    ---@param parentkey any The key of the table item you want to change in the root elementn
+    ---@param subindex any The index of the sub element
+    ---@param subkey any The key of the table item you want to change in the sub elementn
+    ---@param val any What you want to change the value for the keys above
+    function page:setSubElement(parentindex, parentkey, subindex, subkey, val)
+        self.data.elements[parentindex][parentkey][subindex][subkey] = val
+        VorpMenu.Show(self.namespace, self.name, self.type, self.data)
+    end
+
     --- Override all page elements
     ---@param newElements any
     function page:setElements(newElements)
