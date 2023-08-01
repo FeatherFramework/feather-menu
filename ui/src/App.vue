@@ -75,7 +75,7 @@ export default {
         openPage(event) {
             if (!this.menus) this.menus = {}
             // if (!this.menus[event.data.namespace]) {
-            // menus.vorptest.pages
+            // menus.feathertest.pages
 
             this.menus[event.data.namespace] = {
                 page: {},
@@ -148,7 +148,7 @@ body {
     background: rgb(170, 74, 74);
 }
 
-.vorp-button {
+.feather-button {
     width: 84%;
 	
 	display: block;
@@ -166,7 +166,7 @@ body {
     transition: all .08s;
 }
 
-.vorp-button .selected, .vorp-button:hover {
+.feather-button .selected, .feather-button:hover {
     background-image: url(assets/selsected.png), url(assets/selection_box_bg.png);
 	background-repeat: no-repeat;
 	background-position: center;

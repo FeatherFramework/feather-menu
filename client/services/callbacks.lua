@@ -1,7 +1,7 @@
 --? ----- Nui Callbacks below ------
 RegisterNUICallback('onsubmit', function(data, cb)
     PlaySound("SELECT", "RDRO_Character_Creator_Sounds")
-    local menu = VorpMenu.GetPage(data.type, data.namespace, data.name)
+    local menu = FeatherMenu.GetPage(data.type, data.namespace, data.name)
 
     if menu.submit ~= nil then
         -- Callback with changed data and current menu that was submitted
@@ -22,7 +22,7 @@ end)
 RegisterNUICallback('oncancel', function(data, cb)
     PlaySound("SELECT", "RDRO_Character_Creator_Sounds")
 
-    local menu = VorpMenu.GetPage(data.type, data.namespace, data.name)
+    local menu = FeatherMenu.GetPage(data.type, data.namespace, data.name)
 
     if menu.cancel ~= nil then
         -- Callback with cancel data and current menu that was submitted
@@ -34,7 +34,7 @@ end)
 
 
 RegisterNUICallback('onchange', function(data, cb)
-    local menu = VorpMenu.GetPage(data.type, data.namespace, data.name)
+    local menu = FeatherMenu.GetPage(data.type, data.namespace, data.name)
 
     -- for i=1, #data.elements, 1 do
     --     menu.setElement(i, 'value', data.elements[i].value)
@@ -55,7 +55,7 @@ end)
 
 
 RegisterNUICallback('onclose', function(data, cb)
-    local menu = VorpMenu.GetPage(data.type, data.namespace, data.name)
+    local menu = FeatherMenu.GetPage(data.type, data.namespace, data.name)
 
     menu.close()
 
@@ -97,7 +97,7 @@ RegisterNUICallback('triggerdummy', function(data, cb)
     --     { type = "textdisplay", text = "" }
     -- }
 
-    -- ClothElem = VorpMenu.Register('default', 'firstmenu', 'clothingpage', {
+    -- ClothElem = FeatherMenu.Register('default', 'firstmenu', 'clothingpage', {
     --     elements = clothingelements,
     --     config = MenuOneConfig,
     -- }, nil, nil, function(data, menu)
@@ -161,14 +161,14 @@ RegisterNUICallback('triggerdummy', function(data, cb)
         { type = "paginated", elements = paginatedelements, perpage = 5, mode = 'paged', maxheight = '500px' },
         -- { type = "paginated", elements = paginatedelements, mode = 'scroll', maxheight = '300px' },
     }
-    firstpage = VorpMenu.Register('default', 'firstmenu', 'firstpage', {
+    firstpage = FeatherMenu.Register('default', 'firstmenu', 'firstpage', {
         elements = elements,
         config = MenuOneConfig,
         displayfirst = true --Display first must be declared at least once or no Menu will show
     }, nil, nil, function(data, menu)
         -- if (data.action == 'buttonclick' and data.element.value == 'CL') then
         --     print("CL")
-        --     VorpMenu.SetPage(data.type, data.namespace, 'clothingpage')
+        --     FeatherMenu.SetPage(data.type, data.namespace, 'clothingpage')
         -- elseif (data.action == 'arrowselect' and data.element.id == 'hairselect') then
         --     firstpage:setElement(10, 'text', data.value)
         -- elseif (data.action == 'toggle' and data.element.id == 'glasses') then

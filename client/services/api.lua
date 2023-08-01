@@ -2,20 +2,20 @@
 
 -- Export based api initiator
 exports('getUI', function()
-    return VorpMenu
+    return FeatherMenu
 end)
 
 -- Event based api initiator
 AddEventHandler('getUI', function(cb)
-    cb(VorpMenu)
+    cb(FeatherMenu)
 end)
 
 --- API Outbound Events
 OutBoundEvents = {
     menuclosed = function(data)
-        TriggerEvent("VorpMenu:closed", data)
+        TriggerEvent("FeatherMenu:closed", data)
     end,
     menuopened = function(data)
-        TriggerEvent("VorpMenu:opened", data)
+        TriggerEvent("FeatherMenu:opened", data)
     end
 }

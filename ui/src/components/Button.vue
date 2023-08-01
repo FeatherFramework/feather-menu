@@ -1,5 +1,5 @@
 <template>
-    <div @click="emitButton" v-if="element" :tabindex="index" class="vorp-button" :style="element.style || ''">
+    <div @click="emitButton" v-if="element" :tabindex="index" class="feather-button" :style="element.style || ''">
         {{ element.label }}
     </div>
 </template>

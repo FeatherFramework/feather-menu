@@ -25,7 +25,7 @@ jobs:
         with:
           files: fxmanifest.lua license.md README.md version ui/dist client
           recursive: false
-          dest: vorp_menu.zip
+          dest: feather-menu.zip
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
@@ -38,4 +38,4 @@ jobs:
           prerelease: false
           title: "Release ${{ steps.package-version.outputs.current-version}}"
           files: |
-            vorp_menu.zip
+            feather-menu.zip

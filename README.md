@@ -1,8 +1,4 @@
-# VORP Menu
-
-> A dynamic RedM UI script build by [Vorp Core](http://docs.vorpcore.com:3000/)
-
-Join the [VORP Community Discord](https://discord.gg/23MPbQ6)
+# Feather Menu
 
 ## Features
 1. TBD
@@ -11,9 +7,9 @@ Join the [VORP Community Discord](https://discord.gg/23MPbQ6)
 TBD
 
 ## Installation
-1. Download the latest release `vorp_menu.zip` at [/releases/latest](https://github.com/AndrewR3K/vorp_menu/releases/latest)
-2. Extract and place `vorp_menu` into your `resources` folder
-3. Add `ensure vorp_menu` to your `server.cfg` file
+1. Download the latest release `feather-menu.zip` at [/releases/latest](https://github.com/FeatherFramework/feather-menu/releases/latest)
+2. Extract and place `feather-menu` into your `resources` folder
+3. Add `ensure feather-menu` to your `server.cfg` file
 4. Restart your server (unless you have nightly restarts)
 
 ## How-to-configure

@@ -5,7 +5,7 @@ local pagescache = {}
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if VorpMenu.ActiveUI > 0 then
+        if FeatherMenu.ActiveUI > 0 then
             DisableAllControlActions(0);
 
 
@@ -35,14 +35,14 @@ Citizen.CreateThread(function()
 
             if IsPauseMenuActive() and not paused then
                 paused = true
-                pagescache = VorpMenu.GetAllPages()
-                VorpMenu.CloseAll()
+                pagescache = FeatherMenu.GetAllPages()
+                FeatherMenu.CloseAll()
             end
         elseif paused and not IsPauseMenuActive() then
             paused = false
             Citizen.Wait(1000)
             for k, v in pairs(pagescache) do
-                VorpMenu.ReRegister(v)
+                FeatherMenu.ReRegister(v)
             end
             pagescache = {}
         end
