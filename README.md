@@ -2,7 +2,18 @@
 
 ## Features
 
-1. TBD
+1. Menus/Pages
+2. SubMenu
+3. Elements
+   - header
+   - subheader
+   - line
+   - bottomline
+   - button
+   - input
+   - slider
+   - custom html
+   - and much more!
 
 ## Screenshots
 
