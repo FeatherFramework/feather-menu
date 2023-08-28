@@ -25,6 +25,18 @@ All configurations available in `/config.lua`
 
 ## API Docs
 
+### Initiate API
+```lua
+FeatherMenu =  exports['feather-core'].getUI()
+
+-- OR
+
+TriggetEvent("getUI", function(menu)
+    FeatherMenu = menu
+end)
+
+```
+
 ### Menu Config
 
 ```lua
