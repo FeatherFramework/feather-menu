@@ -38,7 +38,7 @@ All configurations available in `/config.lua`
 
 ### Initiate API
 ```lua
-FeatherMenu =  exports['feather-core'].getUI()
+FeatherMenu =  exports['feather-menu'].getUI()
 
 -- OR
 
