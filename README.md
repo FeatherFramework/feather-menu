@@ -69,15 +69,15 @@ local MenuConfig = {
 
 ### Register Menu
 Register and open a UI page/menu
----@param `type` string the type of menu (currently only default)
----@param `namespace` string  This is the menu ui group, group of pages have same namespace
----@param `name` string This is the name of the specific page
----@param `data` table a table consisting of the config and menu elements.
----@param `onsubmit` any Callback for page submits, returns table of changes, and table of menu/page
----@param `oncancel` any Callback for page cancels, returns table of changes, and table of menu/page
----@param `onchange` any Callback for page changes, returns table of changes, and table of menu/page
----@param `close` any Callback for page closes
----@returns table {} page table object
+- @param `type` string the type of menu (currently only default)
+- @param `namespace` string  This is the menu ui group, group of pages have same namespace
+- @param `name` string This is the name of the specific page
+- @param `data` table a table consisting of the config and menu elements.
+- @param `onsubmit` any Callback for page submits, returns table of changes, and table of menu/page
+- @param `oncancel` any Callback for page cancels, returns table of changes, and table of menu/page
+- @param `onchange` any Callback for page changes, returns table of changes, and table of menu/page
+- @param `close` any Callback for page closes
+- @returns table {} page table object
 
 > FeatherMenu.Register(type, namespace, name)
 
@@ -93,10 +93,10 @@ Page =  FeatherMenu.Register('default', 'mymenu', 'homepage', {
 ```
 ### Show Menu
 Sends Open/Show event to NUI
----@param `namespace` string -- The group (menu) identified
----@param `name` string -- The page identifier
----@param `type` string
----@param `data` table
+- @param `namespace` string -- The group (menu) identified
+- @param `name` string -- The page identifier
+- @param `type` string
+- @param `data` table
 
 > FeatherMenu.Show(namespace, name, type, data)
 
@@ -106,9 +106,9 @@ FeatherMenu.Show("mymenu", "homepage", "default")
 
 ### Hide Menu
 Sends Hide event to NUI
----@param `namespace` string
----@param `name` string
----@param `type` string
+- @param `namespace` string
+- @param `name` string
+- @param `type` string
 
 > FeatherMenu.Hide(namespace, name, type)
 
@@ -118,9 +118,9 @@ FeatherMenu.Hide("mymenu", "homepage", "default")
 
 ### Hide Menu
 Sends Hide event to NUI
----@param `namespace` string
----@param `name` string
----@param `type` string
+- @param `namespace` string
+- @param `name` string
+- @param `type` string
 
 > FeatherMenu.Hide(namespace, name, type)
 
@@ -133,36 +133,36 @@ FeatherMenu.Hide("mymenu", "homepage", "default")
 
 ### Update Page
 Update page elements
----@param `query` any --Elements to query
----@param `newData` any -- Elements to update
+- @param `query` any --Elements to query
+- @param `newData` any -- Elements to update
 
 > Page:update(query, newData)
 
 ### Set Page Title
 Set the title of the page
----@param `val` string
+- @param `val` string
 > Page:setTitle(val)
 
 ### Set Page Element
 Override data of a given element
----@param `i` any The index of the element
----@param `key` any The key of the table item you want to change
----@param `val` any What you want to change the value for the key above
+- @param `i` any The index of the element
+- @param `key` any The key of the table item you want to change
+- @param `val` any What you want to change the value for the key above
 > Page:setElement(i, key, val)
 
 ### Set Page Sub Element (paginated elements)
 Override data of a given sub-element
----@param `parentindex` any The index of the root element
----@param `parentkey` any The key of the table item you want to change in the root elementn
----@param `subindex` any The index of the sub element
----@param `subkey` any The key of the table item you want to change in the sub elementn
----@param `val` any What you want to change the value for the keys above
+- @param `parentindex` any The index of the root element
+- @param `parentkey` any The key of the table item you want to change in the root elementn
+- @param `subindex` any The index of the sub element
+- @param `subkey` any The key of the table item you want to change in the sub elementn
+- @param `val` any What you want to change the value for the keys above
 > Page:setSubElement(parentindex, parentkey, subindex, subkey, val)
 
 
 ### Remove Page Element
 Remove an element from query
----@param `query` any
+- @param `query` any
 > Page:removeElement(query)
 
 ### Remove Page
@@ -178,10 +178,10 @@ Sets the page that is visible in the menu
 
 ### Get page
 Get an opened menu
----@param `type` string
----@param `namespace` string
----@param `name` string
----@return table
+- @param `type` string
+- @param `namespace` string
+- @param `name` string
+- @return table
 > FeatherMenu.GetPage(type, namespace, name)
 
 ### Get All Pages
@@ -190,15 +190,15 @@ Get all opened menus
 
 ### Check if page is registered
 Check if a menu is currently open
----@param `type` any
----@param `namespace` any
----@param `name` any
----@return boolean
+- @param `type` any
+- @param `namespace` any
+- @param `name` any
+- @return boolean
 > FeatherMenu.IsRegistered(type, namespace, name)
 
 ### Re-register a page
 Open a previous menu
----@param `prior` table a page table to re-open
+- @param `prior` table a page table to re-open
 > FeatherMenu.ReRegister(prior)
 
 ### Elements
