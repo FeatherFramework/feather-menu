@@ -1,19 +1,22 @@
 {
   "name": "ui",
-  "version": "1.2.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "shim": "node build/fxupdate.js",
     "serve": "NODE_ENV=development yarn run shim && vue-cli-service serve",
     "build": "NODE_ENV=production yarn run shim && vue-cli-service build",
-    "build:local": "NODE_ENV=local yarn run shim && vue-cli-service build",
-    "start": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "shim": "node build/fxupdate.js"
   },
   "dependencies": {
+    "autoprefixer": "^10",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "pinia": "^2.1.6",
+    "postcss": "^8",
+    "tailwindcss": "^3",
     "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
     "vue-slider-component": "^4.1.0-beta.7"
   },
   "devDependencies": {
@@ -27,6 +30,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
-    "sass-loader": "^12.0.0"
+    "sass-loader": "^12.0.0",
+    "vue-cli-plugin-tailwind": "~3.0.0"
   }
 }

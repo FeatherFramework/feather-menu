@@ -1,13 +1,17 @@
 <template>
     <div ref="draggableContainer" id="draggable-container" @mousedown="dragMouseDownFocus">
-        <slot></slot>
+        <MenuView :menudata="menudata" :focused="activefocused" @dragged="dragMouseDown" @closed="handleClosed"></MenuView>
     </div>
 </template>
   
 <script>
+import MenuView from '../views/MenuView.vue'
+import api from '../api'
+
 export default {
     name: 'DraggableDiv',
     data: function () {
+        
         return {
             positions: {
                 clientX: undefined,
@@ -15,46 +19,47 @@ export default {
                 movementX: 0,
                 movementY: 0
             },
+            activefocused: false,
             z: 1
         }
     },
+    components: {
+        'MenuView': MenuView
+    },
     props: {
-        pg: {
+        menudata: {
             type: Object,
             required: true
-        },
-        focused: {
-            required: false
         }
     },
     mounted() {
-        if (this.pg?.page?.data?.config?.draggable == false) {
-            this.$refs.draggableContainer.style.top = this.pg.page.data.config.top || '50%'
-            this.$refs.draggableContainer.style.left = this.pg.page.data.config.left || '50%'
+        if (this.menudata?.config?.draggable == false) {
+            this.$refs.draggableContainer.style.top = this.menudata.config.top || '50%'
+            this.$refs.draggableContainer.style.left = this.menudata.config.left || '50%'
         } else {
-            this.$refs.draggableContainer.style.top = localStorage.getItem(this.minikey + 'Top') || this.pg.page.data.config.top || '50%'
-            this.$refs.draggableContainer.style.left =  localStorage.getItem(this.minikey + 'Left') || this.pg.page.data.config.left || '50%'
+            this.$refs.draggableContainer.style.top = localStorage.getItem(this.menudata.menuid + 'Top') || this.menudata.config.top || '50%'
+            this.$refs.draggableContainer.style.left =  localStorage.getItem(this.menudata.menuid + 'Left') || this.menudata.config.left || '50%'
         }
 
         // Set the dimensions of the menu container
-        this.$refs.draggableContainer.style.width = this.pg.page.data.config.width || '600px'
-        this.$refs.draggableContainer.style.height = this.pg.page.data.config.height || ''
+        this.$refs.draggableContainer.style.width = this.menudata.config.width || '600px'
+        this.$refs.draggableContainer.style.height = this.menudata.config.height|| ''
     },
     watch: {
-        'pg.page.data.config.width': function (data) {
+        'menudata.config.width': function (data) {
             this.$refs.draggableContainer.style.width = data || '600px'
         },
-        'pg.page.data.config.height': function (data) {
+        'menudata.config.height': function (data) {
             this.$refs.draggableContainer.style.height = data || ''
         },
         'positions.clientX': function () {
-            localStorage.setItem(this.minikey + 'Top', this.$refs.draggableContainer.style.top)
+            localStorage.setItem(this.menudata.menuid + 'Top', this.$refs.draggableContainer.style.top)
         },
         'positions.clientY': function () {
-            localStorage.setItem(this.minikey + 'Left', this.$refs.draggableContainer.style.left)
+            localStorage.setItem(this.menudata.menuid + 'Left', this.$refs.draggableContainer.style.left)
         },
-        'focused': function (data) {
-            if (data === this.getKey) {
+        'activefocused': function (data) {
+            if (data ===this.menudata.menuid) {
                 this.$refs.draggableContainer.style['z-index'] = '99'
             } else {
                 this.$refs.draggableContainer.style['z-index'] = '94'
@@ -62,18 +67,19 @@ export default {
         },
     },
     computed: {
-        getKey() {
-            return this.pg.page.type + this.pg.page.namespace + this.pg.page.name
-        },
-        minikey() {
-            return this.pg.page.type + this.pg.page.namespace
-        }
     },
     methods: {
+        handleClosed: function () {
+            api.post("onClose", {
+                menuid: this.menudata.menuid
+            }).catch(e => {
+                console.log(e.message)
+            });
+        },
         dragMouseDown: function (event) {
             event.preventDefault()
             
-            if (!(this.pg?.page?.data?.config.draggable == false)) {
+            if (!(this.menudata.config.draggable == false)) {
                 // get the mouse cursor position at startup:
                 this.positions.clientX = event.clientX
                 this.positions.clientY = event.clientY
@@ -82,7 +88,7 @@ export default {
             }
         },
         dragMouseDownFocus: function () {            
-            this.$parent.focused = this.getKey
+            this.activefocused = this.menudata.menuid
         },
         elementDrag: function (event) {
             event.preventDefault()
@@ -113,7 +119,6 @@ export default {
     position: absolute;
     transition: width 0.04s ease, height 0.04s ease;
     touch-action: none;
-
 }
 
 #draggable-header {

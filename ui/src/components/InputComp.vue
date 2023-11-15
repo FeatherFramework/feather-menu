@@ -1,68 +1,43 @@
 <template>
-    <div v-if="element" :tabindex="index" class="select-button" :style="element.style || ''">
+    <div v-if="element?.data" class="select-button" :style="element.data.style || ''">
         <div>
-            {{ element.label }}
+            {{ element.data.label }}
         </div>
 
         <div class="selector-controls">
-            <input type="text" v-model="value" :placeholder="element.placeholder">
-
+            <input type="text" v-model="value" :placeholder="element.data.placeholder">
         </div>
     </div>
 </template>
   
-<script>
+<script setup>
+import { ref, watch } from "vue";
 import api from "../api";
 
-export default {
-    name: 'VInput',
-    props: {
-        element: {
-            type: Object,
-            required: true
-        },
-        index: {
-            type: Number,
-            required: true
-        },
-        pd: {
-            type: Object,
-            required: true
-        }
-    },
-    data() {
-        return {
-            value: '',
-            timer: null
-        }
-    },
-    mounted() {
-    },
-    watch: {
-        value(data) {
-            clearTimeout(this.timer);
+const value = ref('')
+const timer = ref(null)
 
-            this.timer = setTimeout(() => {
-                this.emitChange(data)
-            }, 1500);
-        }
-    },
-    methods: {
-        async emitChange(data) {
-            api.post("onchange", {
-                type: this.pd.page.type,
-                namespace: this.pd.page.namespace,
-                name: this.pd.page.name,
-                action: 'input',
-                index: this.index + 1,
-                value: data || '',
-                element: this.element
+const props = defineProps({
+    element: {
+        type: Object,
+        required: true
+    }
+})
+
+watch(value, async (newValue) => {
+    if (props.element.hasCallback == true) {
+        if (timer.value) clearTimeout(timer.value);
+
+        timer.value = setTimeout(() => {
+            api.post("onCallback", {
+                ...props.element,
+                value: newValue || '',
             }).catch(e => {
                 console.log(e.message)
             });
-        }
+        }, 500);
     }
-}
+})
 </script>
 <style scoped>
 .selector-controls {

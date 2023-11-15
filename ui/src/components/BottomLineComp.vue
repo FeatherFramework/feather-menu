@@ -2,17 +2,15 @@
     <div class="bottom-hr" :style="element?.style || ''"></div>
 </template>
   
-<script>
-export default {
-    name: 'VLine',
-    props: {
-        element: {
-            type: Object,
-            required: false
-        },
+<script setup>
+defineProps({
+    element: {
+        type: Object,
+        required: true
     }
-}
+})
 </script>
+
 <style scoped>
 .bottom-hr {
     width: 85%;

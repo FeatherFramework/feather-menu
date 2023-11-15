@@ -2,16 +2,13 @@
     <hr :style="element.style || ''"/>
 </template>
   
-<script>
-export default {
-    name: 'VLine',
-    props: {
-        element: {
-            type: Object,
-            required: true
-        },
+<script setup>
+defineProps({
+    element: {
+        type: Object,
+        required: true
     }
-}
+})
 </script>
 <style scoped>
 hr {

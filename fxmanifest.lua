@@ -2,11 +2,15 @@ game 'rdr3'
 fx_version 'adamant'
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 lua54 'yes'
-author "Feather"
+
+author "Feather @ Bytesizd"
+description 'A RedM Standalone UI system'
 
 client_scripts {
+    'client/helpers/*.lua',
     'client/services/*.lua',
-    'client/main.lua'
+    'client/main.lua',
+    'client/test.lua'
 }
 
 ui_page {
@@ -21,6 +25,4 @@ files {
     "ui/img/*.*"
 }
 
-export "initiate"
-
-version '1.2.3'
+version '1.0.0'

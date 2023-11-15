@@ -1,73 +1,45 @@
 <template>
-    <VHeader v-if="element.type === 'header'" :element="element" @mousedown="handleDrag">
-        {{ element.label }} {{ source === 'menu' }}
-    </VHeader>
-    <VSubHeader v-if="element.type === 'subheader'" :element="element">
-        {{ element.label }}
-    </VSubHeader>
-    <Vline v-if="element.type === 'line'" :element="element"></Vline>
-    <VBottomLine v-if="element.type === 'bottomline'" :element="element"></VBottomLine>
-    <VButton :element="element" :index="index" :pd="pd" v-if="element.type === 'button'"></VButton>
-    <VTextDisplay :element="element" :pd="pd" v-if="element.type === 'textdisplay'"></VTextDisplay>
-    <VCustomHTML :element="element" :pd="pd" v-if="element.type === 'html'"></VCustomHTML>
-    <VArrowSelect :element="element" :index="index" :pd="pd" v-if="element.type === 'arrowselect'"></VArrowSelect>
-    <VToggle :element="element" :index="index" :pd="pd" v-if="element.type === 'toggle'"></VToggle>
-    <VSlider :element="element" :index="index" :pd="pd" v-if="element.type === 'slider'"></VSlider>
-    <VInput :element="element" :index="index" :pd="pd" v-if="element.type === 'input'"></VInput>
+    <!-- <div v-for="(element, index) in sortedActivePage" :key="'element' + index + activepage.pageid + activepage.menuid"> -->
+        <HeaderComp v-if="element.type === 'header'" :element="element" @mousedown="handleDrag"></HeaderComp>
+        <SuberHeaderComp v-if="element.type === 'subheader'" :element="element"></SuberHeaderComp>
+        <LineComp v-if="element.type === 'line'" :element="element"></LineComp>
+        <BottomLineComp v-if="element.type === 'bottomline'" :element="element"></BottomLineComp>
+        <InputComp v-if="element.type === 'input'" :element="element"></InputComp>
+        <TextDisplayComp v-if="element.type === 'textdisplay'" :element="element"></TextDisplayComp>
+        <ButtonComp v-if="element.type === 'button'" :element="element"></ButtonComp>
+        <ArrowSelectorComp v-if="element.type === 'arrows'" :element="element"></ArrowSelectorComp>
+        <SliderComp v-if="element.type === 'slider'" :element="element"></SliderComp>
+        <ToggleComp v-if="element.type === 'toggle'" :element="element"></ToggleComp>
+        <HTMLComp v-if="element.type === 'html'" :element="element"></HTMLComp>
+        <PageArrowsComp v-if="element.type === 'pagearrows'" :element="element"></PageArrowsComp>
+    <!-- </div> -->
 </template>
   
-<script>
-import Button from "./Button.vue"
-import Display from "./TextDisplay.vue"
-import Header from './Header.vue'
-import SubHeader from './SuberHeader.vue'
-import Line from './Line.vue'
-import BottomLine from './BottomLine.vue'
-import CustomHTML from "./CustomHTML.vue"
-import ArrowSelector from "./ArrowSelector.vue"
-import Toggle from "./Toggle.vue"
-import Slider from './Slider.vue'
-import Input from './Input.vue'
+<script setup>
+import HeaderComp from './HeaderComp.vue';
+import SuberHeaderComp from './SuberHeaderComp.vue';
+import LineComp from './LineComp.vue';
+import BottomLineComp from './BottomLineComp.vue'
+import InputComp from './InputComp.vue';
+import TextDisplayComp from './TextDisplayComp.vue';
+import ButtonComp from './ButtonComp.vue'
+import ArrowSelectorComp from './ArrowSelectorComp.vue';
+import SliderComp from './SliderComp.vue';
+import ToggleComp from './ToggleComp.vue';
+import HTMLComp from './HTMLComp.vue';
+import PageArrowsComp from './PageArrowsComp.vue';
 
-export default {
-    name: 'AllComponents',
-    props: {
-        element: {
-            type: Object,
-            required: true
-        },
-        pd: {
-            type: Object,
-            required: true
-        },
-        index: {
-            type: Number,
-            required: true
-        },
-        source: {
-            type: String,
-            required: false,
-            default: 'component'
-        },
-    },
-    components: {
-        'VButton': Button,
-        'VTextDisplay': Display,
-        'VHeader': Header,
-        'VSubHeader': SubHeader,
-        'Vline': Line,
-        'VBottomLine': BottomLine,
-        'VCustomHTML': CustomHTML,
-        'VArrowSelect': ArrowSelector,
-        'VToggle': Toggle,
-        'VSlider': Slider,
-        'VInput': Input
-    },
-    methods: {
-        handleDrag(event) {
-            if(this.source === 'menu') this.$parent.$parent.dragMouseDown(event)
-        }
+const props = defineProps({
+    element: {
+        type: Object,
+        required: true
     }
+})
+
+const emit = defineEmits(['dragged'])
+
+const handleDrag = (event) => {
+    if (props.element.data.draggable == true || typeof props.element.data.draggable == 'undefined') emit('dragged', event)
 }
+
 </script>
-<style scoped></style>

@@ -1,19 +1,16 @@
 <template>
-    <h1 :style="element.style || ''">
-        <slot/>
+    <h1 :style="element.data.style || ''">
+        {{ element.data.value }}
     </h1>
 </template>
   
-<script>
-export default {
-    name: 'VHeader',
-    props: {
-        element: {
-            type: Object,
-            required: true
-        },
+<script setup>
+defineProps({
+    element: {
+        type: Object,
+        required: true
     }
-}
+})
 </script>
 <style scoped>
 h1 {

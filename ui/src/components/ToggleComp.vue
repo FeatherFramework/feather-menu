@@ -1,7 +1,7 @@
 <template>
-    <div v-if="element" :tabindex="index" class="select-button" :style="element.style || ''">
+    <div v-if="element?.data" class="select-button" :style="element.data.style || ''">
         <div>
-            {{ element.label }}
+            {{ element.data.label }}
         </div>
 
         <div class="selector-controls">
@@ -13,66 +13,31 @@
     </div>
 </template>
   
-<script>
+<script setup>
+import { ref, onMounted, watch } from "vue";
 import api from "../api";
 
-export default {
-    name: 'VToggle',
-    props: {
-        element: {
-            type: Object,
-            required: true
-        },
-        index: {
-            type: Number,
-            required: true
-        },
-        pd: {
-            type: Object,
-            required: true
-        }
-    },
-    data() {
-        return {
-            current: null
-        }
-    },
-    mounted() {
-        this.current = this.element.start ? this.element.start : false
-    },
-    watch: {
-        current(data) {
-            this.emitChange(data)
-        }
-    },
-    methods: {
-        inc() {
-            if (this.current > 0) {
-                this.current--
-                // this.emitChange()
-            }
-        },
-        dec() {
-            if (this.current < this.element.options.length - 1) {
-                this.current++
-                // this.emitChange()
-            }
-        },
-        emitChange(data) {
-            api.post("onchange", {
-                type: this.pd.page.type,
-                namespace: this.pd.page.namespace,
-                name: this.pd.page.name,
-                action: 'toggle',
-                index: this.index + 1,
-                value: data,
-                element: this.element
-            }).catch(e => {
-                console.log(e.message)
-            });
-        }
+const current = ref(null)
+
+const props = defineProps({
+    element: {
+        type: Object,
+        required: true
     }
-}
+})
+
+onMounted(() => {
+    current.value = props.element.data.start ? props.element.data.start : false
+})
+
+watch(current, async (data) => {
+    api.post("onCallback", {
+        ...props.element,
+        value: data
+    }).catch(e => {
+        console.log(e.message)
+    });
+})
 </script>
 <style scoped>
 .selector-controls {
@@ -144,6 +109,7 @@ export default {
     transition: .4s;
     box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
 }
+
 input:checked+.toggle {
     background-color: #c90707;
 }
@@ -157,10 +123,10 @@ input:checked+.toggle:before {
 }
 
 .toggle.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .toggle.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 </style>
