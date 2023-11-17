@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-wrap" :style="menudata?.config?.style || ''">
+    <div id="feathermenu" class="menu-wrap" :style="menudata?.config?.style || ''">
         <div class="close" @click="closeApp">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" fill="white">
                 <path
@@ -31,7 +31,7 @@
 
 <script setup>
 import AllComponents from '@/components/AllComponents.vue';
-import { computed } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue';
 
 const props = defineProps({
     menudata: {
@@ -40,10 +40,15 @@ const props = defineProps({
     },
     focused: {
         required: true
+    },
+    controlPressed: {
+        required: true
     }
 })
 
 const emit = defineEmits(['dragged', 'closed'])
+
+const currentPosition = ref(0)
 
 const closeApp = () => {
     emit('closed')
@@ -52,6 +57,80 @@ const closeApp = () => {
 const handleDrag = (event) => {
     emit('dragged', event)
 }
+
+onMounted(() => {
+    nextTick(() => {
+        window.focus();
+    });
+
+    window.addEventListener("keydown", onKeyDown);
+});
+
+onUnmounted(() => {
+    currentPosition.value = 0;
+    window.removeEventListener("keydown", onKeyDown);
+});
+
+const onKeyDown = (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault()
+        const tabs = window.document.querySelectorAll("[tabIndex]");
+        const index = Array.from(tabs).indexOf(e.target);
+        (tabs[index]).click();
+    }
+
+    if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        const tabs = window.document.querySelectorAll("[tabIndex]");
+        const index = Array.from(tabs).indexOf(e.target);
+
+        if (index < tabs.length - 1) {
+            var newindexp = index + 1;
+            (tabs[newindexp]).focus();
+            currentPosition.value = newindexp;
+        }
+    }
+    if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        const tabs = window.document.querySelectorAll("[tabIndex]");
+        const index = Array.from(tabs).indexOf(e.target);
+        if (index < 0) {
+            (tabs[0]).focus();
+        }
+
+        if (index > 0) {
+            var newindexm = index - 1;
+            (tabs[newindexm]).focus();
+            currentPosition.value = newindexm;
+        }
+    }
+}
+
+watch(() => props.controlPressed, (newdata) => {
+    const tabs = window.document.querySelectorAll("[tabIndex]");
+    switch (newdata) {
+        case "DOWN":
+            if (currentPosition.value < tabs.length - 1) {
+                var newindexp = currentPosition.value + 1;
+                (tabs[newindexp]).focus();
+                currentPosition.value = newindexp;
+            }
+            break;
+        case "UP":
+            if (currentPosition.value < 0) {
+                (tabs[0]).focus();
+            }
+
+            if (currentPosition.value > 0) {
+                var newindexm = currentPosition.value - 1;
+                (tabs[newindexm]).focus();
+                currentPosition.value = newindexm;
+            }
+            break;
+        default:
+            break;
+    }
+})
 
 const HeaderContent = computed(() => {
     // This is null on first enact, so lets check and send nothing back so we bipass a null error.
@@ -119,5 +198,9 @@ const ContentContent = computed(() => {
 .close:hover svg {
     fill: #c90707;
     transition: all .3s;
+}
+
+.activeelement {
+    background-color: yellow;
 }
 </style>

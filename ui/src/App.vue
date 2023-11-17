@@ -1,16 +1,17 @@
 <template>
   <div v-for="(registeredMenu, menuid) in RegisteredMenus" :key="'MENU' + menuid">
-    <Draggable v-if="registeredMenu !== null" :menudata="registeredMenu"></Draggable>
+    <Draggable v-if="registeredMenu !== null" :menudata="registeredMenu" :controlPressed="controlPressed"></Draggable>
   </div>
 </template>
 
 <script setup>
-import { reactive, onMounted, onUnmounted } from "vue";
+import { reactive, onMounted, onUnmounted, ref } from "vue";
 import "@/assets/styles/main.css";
 
 import Draggable from "./components/Draggable.vue";
 
 const RegisteredMenus = reactive({})
+const controlPressed = ref('')
 
 onMounted(() => {
   window.addEventListener("message", onMessage);
@@ -39,10 +40,20 @@ const onMessage = (event) => {
     case "updateelement":
       RegisteredMenus[event.data.menuid].activepage.elements[event.data.elemid] = event.data.element
       break;
+    case "controlPressed":
+      gameButtonPressed(event)
+      break;
     default:
       break;
   }
 };
+
+const gameButtonPressed = (event) => {
+  controlPressed.value = ''
+  if (event.data.control) {
+    controlPressed.value = event.data.control
+  }
+}
 </script>
 
 <style>
@@ -85,33 +96,6 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(170, 74, 74);
-}
-
-.feather-button {
-  width: 84%;
-
-  display: block;
-  padding: 10px 15px;
-  font-size: 20px;
-  text-align: center;
-
-  margin: 0 auto;
-  margin-top: 6px;
-
-  background-image: url(assets/selection_box_bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 110%;
-  transition: all .08s;
-}
-
-.feather-button .selected,
-.feather-button:hover {
-  background-image: url(assets/selsected.png), url(assets/selection_box_bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  transition: all .08s;
 }
 
 

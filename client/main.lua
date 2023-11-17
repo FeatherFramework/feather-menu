@@ -71,6 +71,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
             options.overrideMenu = true
         end
 
+        if options.allowKeys == nil then
+            options.allowKeys = true
+        end
+
         FeatherMenu.ActiveOptions = options
 
 
@@ -88,9 +92,9 @@ function FeatherMenu:RegisterMenu(menuID, config)
         SetNuiFocus(options.menuFocus, options.cursorFocus)
 
         -- This helps to maintain the proper nui focus/count
-        FeatherMenu.activeMenu = FeatherMenu.RegisteredMenus[menuID]
         FeatherMenu.RegisteredMenus[menuID].active = true
         FeatherMenu.RegisteredMenus[menuID].allowKeys = options.allowKeys
+        FeatherMenu.activeMenu = FeatherMenu.RegisteredMenus[menuID]
 
         if options.startupPage ~= nil then
             options.startupPage:RouteTo()

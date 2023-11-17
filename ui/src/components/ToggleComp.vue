@@ -6,7 +6,7 @@
 
         <div class="selector-controls">
             <label class="switch">
-                <input type="checkbox" v-model="current">
+                <input type="checkbox" :tabindex="element.index" v-model="current">
                 <span class="toggle round"></span>
             </label>
         </div>
@@ -116,6 +116,19 @@ input:checked+.toggle {
 
 input:focus+.toggle {
     box-shadow: 0 0 1px #c90707;
+}
+
+input:focus + .toggle:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    bottom: -4px;
+    background-color: white;
+    border: 2px solid #c90707;
+    transition: .4s;
+    box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
 }
 
 input:checked+.toggle:before {

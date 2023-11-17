@@ -1,6 +1,6 @@
 <template>
     <div ref="draggableContainer" id="draggable-container" @mousedown="dragMouseDownFocus">
-        <MenuView :menudata="menudata" :focused="activefocused" @dragged="dragMouseDown" @closed="handleClosed"></MenuView>
+        <MenuView :menudata="menudata" :focused="activefocused" @dragged="dragMouseDown" @closed="handleClosed" :controlPressed="controlPressed"></MenuView>
     </div>
 </template>
   
@@ -29,6 +29,9 @@ export default {
     props: {
         menudata: {
             type: Object,
+            required: true
+        },
+        controlPressed: {
             required: true
         }
     },

@@ -46,7 +46,7 @@ const handleChange = () => {
 <style scoped>
 .selector-controls {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     margin: 0 23px;
 }
 

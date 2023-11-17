@@ -5,17 +5,17 @@
         </div>
 
         <div class="selector-controls">
-            <div class="selector-control">
-                <svg width="28pt" @click="inc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+            <button :tabindex="element.index" class="selector-control" @click="inc">
+                <svg width="28pt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
                     <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
                 </svg>
-            </div>
+            </button>
             <div>{{ element.data.options[current]?.display ? element.data.options[current].display  : element.data.options[current] }}</div>
-            <div class="selector-control">
-                <svg width="28pt" @click="dec" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+            <button :tabindex="element.index" class="selector-control" @click="dec">
+                <svg width="28pt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
-            </div>
+            </button>
         </div>
     </div>
 </template>
@@ -69,6 +69,16 @@ const dec = () => {
 
 .selector-control {
     flex: 1;
+}
+
+.selector-control:focus {
+    outline: none;
+}
+
+.selector-control:focus svg {
+    outline: none;
+    fill: #c90707;
+    transition: all 0.2s ease;
 }
 
 svg {

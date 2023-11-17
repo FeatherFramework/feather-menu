@@ -5,7 +5,7 @@
         </div>
 
         <div class="selector-controls">
-            <input type="text" v-model="value" :placeholder="element.data.placeholder">
+            <input :tabindex="element.index" type="text" v-model="value" :placeholder="element.data.placeholder">
         </div>
     </div>
 </template>
@@ -42,7 +42,7 @@ watch(value, async (newValue) => {
 <style scoped>
 .selector-controls {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     margin: 0 23px;
 }
 

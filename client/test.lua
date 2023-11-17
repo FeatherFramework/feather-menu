@@ -232,9 +232,8 @@ RegisterCommand('TestMenu', function()
     end)
 
     MyMenu:Open({
-        -- cursorFocus = false,
+        cursorFocus = false,
         -- menuFocus = false,
-        -- allowKeys = false,
         startupPage = MyFirstPage
     }) 
 end)
