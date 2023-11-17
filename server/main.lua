@@ -48,9 +48,7 @@ local checkForUIRelease = function (resourcename, repo)
     end
 end
 
-function StartVersioner()
-    Citizen.CreateThread(function()
-        checkFile('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
-        checkForUIRelease('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
-    end)
-end
+Citizen.CreateThread(function()
+    checkFile('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
+    checkForUIRelease('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
+end)
