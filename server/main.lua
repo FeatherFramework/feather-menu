@@ -40,10 +40,7 @@ local checkFile = function(resourcename, repo)
         })
 end
 
-local function checkForUIRelease(resource)
-    local resourcename = GetResourceMetadata(resource, 'name', 0)
-    local repo = GetResourceMetadata(resource, 'github_link', 0)
-
+local checkForUIRelease = function (resourcename, repo)
     local f = LoadResourceFile(resourcename, './ui/index.html')
     if not f then
         print("^1 INCORRECT DOWNLOAD!  ^0")
@@ -54,6 +51,6 @@ end
 function StartVersioner()
     Citizen.CreateThread(function()
         checkFile('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
-        checkForUIRelease(resource)
+        checkForUIRelease('feather-menu', 'https://github.com/FeatherFramework/feather-menu')
     end)
 end

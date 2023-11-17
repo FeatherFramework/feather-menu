@@ -9,8 +9,11 @@ description 'A RedM Standalone UI system'
 client_scripts {
     'client/helpers/*.lua',
     'client/services/*.lua',
-    'client/main.lua',
-    'client/services/api.lua'
+    'client/main.lua'
+}
+
+server_scripts {
+    'server/main.lua'
 }
 
 ui_page {
