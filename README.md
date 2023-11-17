@@ -30,4 +30,4 @@
 
 
 ## API Docs
-COMING SOON!
+[Feather Menu API Docs](https://featherframework.net/api/Menu)
