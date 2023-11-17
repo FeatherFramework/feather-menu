@@ -31,3 +31,8 @@
 
 ## API Docs
 [Feather Menu API Docs](https://featherframework.net/api/Menu)
+
+## TODO
+- UW resolution Support
+- Menu sound support
+- Code cleanup
