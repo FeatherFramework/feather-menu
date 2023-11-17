@@ -166,7 +166,6 @@ const ContentContent = computed(() => {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .menu-wrap {
-    min-width: 510px;
     background-image: url(../assets/inkroller.png);
     background-repeat: no-repeat;
     background-position: center;

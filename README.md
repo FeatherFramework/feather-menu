@@ -31,9 +31,3 @@
 
 ## API Docs
 COMING SOON!
-
-## TODO 
-1. Resolution scaling
-2. Tab index
-3. keyboard arrowkeys (maybe)
-4. content overflow (scroll)

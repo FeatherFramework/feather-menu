@@ -15,7 +15,10 @@ RegisterCommand('TestMenu', function()
     local MyMenu = FeatherMenu:RegisterMenu('feather:character:menu', {
         top = '40%',
         left = '20%',
-        width = '510px',
+        ['720width'] = '500px',
+        ['1080width'] = '600px',
+        ['2kwidth'] = '700px',
+        ['4kwidth'] = '900px',
         style = {
             -- ['height'] = '500px'
             -- ['border'] = '5px solid white',
@@ -232,7 +235,7 @@ RegisterCommand('TestMenu', function()
     end)
 
     MyMenu:Open({
-        cursorFocus = false,
+        -- cursorFocus = false,
         -- menuFocus = false,
         startupPage = MyFirstPage
     }) 
