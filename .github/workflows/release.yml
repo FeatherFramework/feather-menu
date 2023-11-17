@@ -25,7 +25,7 @@ jobs:
         with:
           files: fxmanifest.lua LICENSE.md README.md locale.lua version ui/dist client server config.lua languages
           recursive: false
-          dest: bcc-vue-boilerplate.zip
+          dest: feather-menu.zip
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
@@ -38,4 +38,4 @@ jobs:
           prerelease: false
           title: "Release ${{ steps.package-version.outputs.current-version}}"
           files: |
-            bcc-vue-boilerplate.zip
+            feather-menu.zip
