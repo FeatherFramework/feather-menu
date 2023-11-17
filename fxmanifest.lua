@@ -10,7 +10,7 @@ client_scripts {
     'client/helpers/*.lua',
     'client/services/*.lua',
     'client/main.lua',
-    'client/test.lua'
+    'client/services/api.lua'
 }
 
 ui_page {

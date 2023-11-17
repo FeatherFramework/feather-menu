@@ -5,6 +5,12 @@ FeatherMenu = {
     ActiveOptions = {}
 }
 
+RegisterNUICallback('playsound', function(data, cb)
+    PlaySound(data.action, data.soundset)
+    cb('ok')
+end)
+
+
 RegisterNUICallback('onClose', function(data, cb)
     if FeatherMenu.RegisteredMenus[data.menuid] then
         FeatherMenu.RegisteredMenus[data.menuid].class:Close()
@@ -219,3 +225,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
     FeatherMenu.RegisteredMenus[menuID].class = menuClass
     return menuClass
 end
+
+exports('initiate', function()
+    return FeatherMenu
+end)
