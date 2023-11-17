@@ -24,9 +24,11 @@
 
 ## Screenshots
 
-![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/d4b5c4a8-fc9d-4211-b739-f15fa64c3957)
-![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/44bc427c-6973-4fea-9d9c-00dab5846ecd)
-![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/6b4776d0-5e76-49c3-8f05-39306b71f92c)
+![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/07aa8fd3-a94c-4938-b1c0-1eb5a9a8500d)
+![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/0cb5aadf-4423-4332-a528-42d2d25c2a24)
+![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/0bf164cb-2fc7-45fb-8b36-25795e4798da)
+![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/a6b73f8e-a851-4478-b332-5b20559ac9a5)
+![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/2a689fa2-b51d-426a-a754-a8287ed4c755)
 
 
 ## API Docs
