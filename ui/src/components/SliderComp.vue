@@ -18,6 +18,7 @@ import VueSlider from 'vue-slider-component'
 
 const current = ref(null)
 const timer = ref(null)
+const initiated = ref(false);
 
 const props = defineProps({
     element: {
@@ -27,28 +28,38 @@ const props = defineProps({
 })
 
 onMounted(() => {
-    current.value = props.element.data.start ? props.element.data.start : false
+    if (props.element.data.value >= 0) {
+        current.value = props.element.data.value
+    } else {
+        current.value = props.element.data.start ? props.element.data.start : false
+    }
+
+    setTimeout(() => {
+        initiated.value = true
+    }, 250);
 })
 
 const handleChange = () => {
-    if (timer.value) clearTimeout(timer.value);
+    if (initiated.value == true) {
+        if (timer.value) clearTimeout(timer.value);
 
-    timer.value = setTimeout(() => {
-        if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
-            api.post("playsound", {
-                action: props.element.data.sound.action,
-                soundset: props.element.data.sound.soundset
+        timer.value = setTimeout(() => {
+            if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
+                api.post("playsound", {
+                    action: props.element.data.sound.action,
+                    soundset: props.element.data.sound.soundset
+                }).catch(e => {
+                    console.log(e.message)
+                });
+            }
+            api.post("onCallback", {
+                ...props.element,
+                value: current.value
             }).catch(e => {
                 console.log(e.message)
             });
-        }
-        api.post("onCallback", {
-            ...props.element,
-            value: current.value,
-        }).catch(e => {
-            console.log(e.message)
-        });
-    }, 500);
+        }, 500);
+    }
 }
 </script>
 <style scoped>

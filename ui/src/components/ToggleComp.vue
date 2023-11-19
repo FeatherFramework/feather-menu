@@ -28,7 +28,11 @@ const props = defineProps({
 })
 
 onMounted(() => {
-    current.value = props.element.data.start ? props.element.data.start : false
+    if (props.element.data.value !== null && typeof props.element.data.value !== 'undefined') {
+        current.value = props.element.data.value
+    } else {
+        current.value = props.element.data.start ? props.element.data.start : false
+    }
 
     setTimeout(() => {
         initiated.value = true

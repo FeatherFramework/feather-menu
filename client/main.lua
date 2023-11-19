@@ -127,7 +127,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
             FeatherMenu.RegisteredMenus[menuID].active = false
             SetNuiFocus(false, false)
 
-            if (options.sound ~= nil) then
+            if (options ~= nil and options.sound ~= nil) then
                 PlaySound(options.sound.action, options.sound.soundset)
             end
         end
@@ -200,8 +200,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
             pageClass.ElementCount = pageClass.ElementCount + 1
 
             function elemClass:update(newElemData)
-                --TODO: Make an object compariscon and oly change what has actually changed (Currently things like css will get overridden)
-                pageClass.RegisteredElements[elemID].data = newElemData
+                pageClass.RegisteredElements[elemID].data = TableMerge(pageClass.RegisteredElements[elemID].data, newElemData)
 
                 if FeatherMenu.activeMenu.menuID == menuID and menuClass.RegisteredPages[pageID].active == true then
                     local event = {
@@ -219,8 +218,19 @@ function FeatherMenu:RegisterMenu(menuID, config)
             end
 
             function elemClass:callback(changeData)
+                if changeData.data.persist == nil or changeData.data.persist == true then
+                    local persistData = changeData.value
+                    if changeData.persistindex ~= nil then
+                        persistData = changeData.persistindex
+                    end
+
+                    elemClass:update({
+                        value = persistData
+                    })
+                end
+
                 if callback ~= nil then
-                    callback(changeData)
+                    callback(changeData, elemClass)
                 end
             end
 

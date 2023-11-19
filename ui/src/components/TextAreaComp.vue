@@ -11,12 +11,12 @@
 </template>
   
 <script setup>
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import api from "../api";
 
 const value = ref('')
 const timer = ref(null)
-
+const initiated = ref(false);
 const props = defineProps({
     element: {
         type: Object,
@@ -24,8 +24,16 @@ const props = defineProps({
     }
 })
 
+onMounted(() => {
+    value.value = props.element.data.value || ''
+
+    setTimeout(() => {
+        initiated.value = true
+    }, 250);
+})
+
 watch(value, async (newValue) => {
-    if (props.element.hasCallback == true) {
+    if (props.element.hasCallback == true && initiated.value == true) {
         if (timer.value) clearTimeout(timer.value);
 
         timer.value = setTimeout(() => {

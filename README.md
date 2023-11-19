@@ -36,4 +36,4 @@
 
 ## TODO
 - UW resolution Support
-- Persist options.value in all elements.
+- Dropdown Select

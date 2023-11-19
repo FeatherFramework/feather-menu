@@ -36,7 +36,11 @@ const props = defineProps({
 })
 
 onMounted(() => {
-    current.value = props.element.data.start ? props.element.data.start - 1 : 0
+    if (props.element.data.value >= 0) {
+        current.value = props.element.data.value
+    } else {
+        current.value = props.element.data.start ? props.element.data.start - 1 : 0
+    }
 
     setTimeout(() => {
         initiated.value = true
@@ -57,7 +61,8 @@ watch(current, async (data) => {
 
         api.post("onCallback", {
             ...props.element,
-            value: props.element.data.options[data]
+            value: props.element.data.options[data],
+            persistindex: data
         }).catch(e => {
             console.log(e.message)
         });
