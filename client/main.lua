@@ -127,7 +127,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
             FeatherMenu.RegisteredMenus[menuID].active = false
             SetNuiFocus(false, false)
 
-            if (options.sound ~= nil) then
+            if (options ~= nil and options.sound ~= nil) then
                 PlaySound(options.sound.action, options.sound.soundset)
             end
         end
