@@ -17,6 +17,7 @@
 import { ref, onMounted, watch } from "vue";
 import api from "../api";
 
+const initiated = ref(false);
 const current = ref(null)
 
 const props = defineProps({
@@ -28,15 +29,30 @@ const props = defineProps({
 
 onMounted(() => {
     current.value = props.element.data.start ? props.element.data.start : false
+
+    setTimeout(() => {
+        initiated.value = true
+    }, 250);
 })
 
 watch(current, async (data) => {
-    api.post("onCallback", {
-        ...props.element,
-        value: data
-    }).catch(e => {
-        console.log(e.message)
-    });
+    if (initiated.value == true) {
+        if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
+            api.post("playsound", {
+                action: props.element.data.sound.action,
+                soundset: props.element.data.sound.soundset
+            }).catch(e => {
+                console.log(e.message)
+            });
+        }
+
+        api.post("onCallback", {
+            ...props.element,
+            value: data
+        }).catch(e => {
+            console.log(e.message)
+        });
+    }
 })
 </script>
 <style scoped>
@@ -118,7 +134,7 @@ input:focus+.toggle {
     box-shadow: 0 0 1px #c90707;
 }
 
-input:focus + .toggle:before {
+input:focus+.toggle:before {
     position: absolute;
     content: "";
     height: 22px;

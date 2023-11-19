@@ -16,6 +16,15 @@ const props = defineProps({
 })
 
 const emitButton = () => {
+    if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
+        api.post("playsound", {
+            action: props.element.data.sound.action,
+            soundset: props.element.data.sound.soundset
+        }).catch(e => {
+            console.log(e.message)
+        });
+    }
+
     api.post("onCallback", props.element).catch(e => {
         console.log(e.message)
     });
@@ -41,7 +50,8 @@ const emitButton = () => {
 }
 
 .feather-button .selected,
-.feather-button:hover, .feather-button:focus {
+.feather-button:hover,
+.feather-button:focus {
     outline: none;
     background-image: url(../assets/selsected.png), url(../assets/selection_box_bg.png);
     background-repeat: no-repeat;

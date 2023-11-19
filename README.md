@@ -36,5 +36,4 @@
 
 ## TODO
 - UW resolution Support
-- Menu sound support
 - Code cleanup

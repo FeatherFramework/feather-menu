@@ -1,7 +1,8 @@
 <template>
-    <div ref="draggableContainer" id="draggable-container" :style="{'--shd': menudata.config['720width'] || '500px', '--fhd': menudata.config['1080width'] || '600px', '--khd': menudata.config['2kwidth'] || '700px', '--kkhd': menudata.config['4kwidth'] || '800px'}" @mousedown="dragMouseDownFocus">
-        <MenuView :menudata="menudata" :focused="activefocused" @dragged="dragMouseDown" @closed="handleClosed"
-            :controlPressed="controlPressed"></MenuView>
+    <div ref="draggableContainer" id="draggable-container"
+        :style="{ '--shd': menudata.config['720width'] || '500px', '--fhd': menudata.config['1080width'] || '600px', '--khd': menudata.config['2kwidth'] || '700px', '--kkhd': menudata.config['4kwidth'] || '800px' }"
+        @mousedown="dragMouseDownFocus">
+        <MenuView :menudata="menudata" :focused="activefocused" @dragged="dragMouseDown" @closed="handleClosed"></MenuView>
     </div>
 </template>
   
@@ -30,9 +31,6 @@ export default {
     props: {
         menudata: {
             type: Object,
-            required: true
-        },
-        controlPressed: {
             required: true
         }
     },
@@ -134,28 +132,28 @@ export default {
 /* 720p */
 @media only screen and (min-width: 1280) {
     #draggable-container {
-       width: var(--shd);
+        width: var(--shd);
     }
 }
 
 /* 1080p */
 @media only screen and (min-width: 1920px) {
     #draggable-container {
-       width: var(--fhd);
+        width: var(--fhd);
     }
 }
 
 /* 2k */
 @media only screen and (min-width: 2560px) {
     #draggable-container {
-       width: var(--khd);
+        width: var(--khd);
     }
 }
 
 /* 4k */
 @media only screen and (min-width: 3840px) {
     #draggable-container {
-       width: var(--kkhd);
+        width: var(--kkhd);
     }
 }
 </style>

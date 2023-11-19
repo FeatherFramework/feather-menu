@@ -5,18 +5,16 @@
         </div>
 
         <div class="selector-controls">
-            <vue-slider class="slider" v-model="current" :min="element.data.min || 0" :max="element.data.max || 100"
-                :interval="element.data.steps || 1" @change="handleChange" />
+            <textarea :tabindex="element.index" :rows="element.data.rows || '4'" :cols="element.data.cols || '33'"  :style="{'resize': element.data.resize ? '' : 'none'}" v-model="value" :placeholder="element.data.placeholder"> </textarea>
         </div>
     </div>
 </template>
   
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref, watch } from "vue";
 import api from "../api";
-import VueSlider from 'vue-slider-component'
 
-const current = ref(null)
+const value = ref('')
 const timer = ref(null)
 
 const props = defineProps({
@@ -26,36 +24,30 @@ const props = defineProps({
     }
 })
 
-onMounted(() => {
-    current.value = props.element.data.start ? props.element.data.start : false
-})
+watch(value, async (newValue) => {
+    if (props.element.hasCallback == true) {
+        if (timer.value) clearTimeout(timer.value);
 
-const handleChange = () => {
-    if (timer.value) clearTimeout(timer.value);
-
-    timer.value = setTimeout(() => {
-        if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
-            api.post("playsound", {
-                action: props.element.data.sound.action,
-                soundset: props.element.data.sound.soundset
+        timer.value = setTimeout(() => {
+            api.post("onCallback", {
+                ...props.element,
+                value: newValue || '',
             }).catch(e => {
                 console.log(e.message)
             });
-        }
-        api.post("onCallback", {
-            ...props.element,
-            value: current.value,
-        }).catch(e => {
-            console.log(e.message)
-        });
-    }, 500);
-}
+        }, 500);
+    }
+})
 </script>
 <style scoped>
 .selector-controls {
     display: flex;
     align-items: flex-end;
     margin: 0 23px;
+}
+
+.selector-control {
+    /* flex: 1; */
 }
 
 .select-button {
@@ -82,7 +74,28 @@ const handleChange = () => {
     flex: 1;
 }
 
-.slider {
-    margin-bottom: 10px;
+textarea {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    background-color: #ccc;
+    color: #413f3f;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+textarea::placeholder {
+    font-weight: 600;
+    /* opacity: 0.5; */
+    color: #413f3f;
+}
+
+
+textarea:focus {
+    border: 3px solid #c90707;
+    outline: none;
 }
 </style>

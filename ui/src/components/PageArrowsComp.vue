@@ -27,6 +27,15 @@ const props = defineProps({
 })
 
 const emitButton = (direction) => {
+    if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
+        api.post("playsound", {
+            action: props.element.data.sound.action,
+            soundset: props.element.data.sound.soundset
+        }).catch(e => {
+            console.log(e.message)
+        });
+    }
+
     api.post("onCallback", {
         ...props.element,
         value: direction

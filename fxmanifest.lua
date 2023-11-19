@@ -17,15 +17,15 @@ server_scripts {
 }
 
 ui_page {
-    "ui/index.html"
+    "ui/shim.html"
 }
 
 files {
-    "ui/index.html",
+    "ui/shim.html",
     "ui/js/*.*",
     "ui/css/*.*",
     "ui/fonts/*.*",
     "ui/img/*.*"
 }
 
-version '1.0.0'
+version '1.0.1'

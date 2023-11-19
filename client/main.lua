@@ -58,7 +58,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
         local event = {
             action = 'openmenu',
             menuid = menuID,
-            config = config
+            config = config,
         }
 
         if options == nill then
@@ -105,10 +105,14 @@ function FeatherMenu:RegisterMenu(menuID, config)
         if options.startupPage ~= nil then
             options.startupPage:RouteTo()
         end
+
+        if (options.sound ~= nil) then
+            PlaySound(options.sound.action, options.sound.soundset)
+        end
     end
 
     -- close the menu
-    function menuClass:Close()
+    function menuClass:Close(options)
         if FeatherMenu.activeMenu.menuID == menuID then
             local event = {
                 action = 'closemenu',
@@ -122,6 +126,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
             FeatherMenu.activeMenu = nil
             FeatherMenu.RegisteredMenus[menuID].active = false
             SetNuiFocus(false, false)
+
+            if (options.sound ~= nil) then
+                PlaySound(options.sound.action, options.sound.soundset)
+            end
         end
     end
 

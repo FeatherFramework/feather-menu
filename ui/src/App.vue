@@ -1,17 +1,16 @@
 <template>
   <div v-for="(registeredMenu, menuid) in RegisteredMenus" :key="'MENU' + menuid">
-    <Draggable v-if="registeredMenu !== null" :menudata="registeredMenu" :controlPressed="controlPressed"></Draggable>
+    <Draggable v-if="registeredMenu !== null" :menudata="registeredMenu"></Draggable>
   </div>
 </template>
 
 <script setup>
-import { reactive, onMounted, onUnmounted, ref } from "vue";
+import { reactive, onMounted, onUnmounted } from "vue";
 import "@/assets/styles/main.css";
 
 import Draggable from "./components/Draggable.vue";
 
 const RegisteredMenus = reactive({})
-const controlPressed = ref('')
 
 onMounted(() => {
   window.addEventListener("message", onMessage);
@@ -40,20 +39,10 @@ const onMessage = (event) => {
     case "updateelement":
       RegisteredMenus[event.data.menuid].activepage.elements[event.data.elemid] = event.data.element
       break;
-    case "controlPressed":
-      gameButtonPressed(event)
-      break;
     default:
       break;
   }
 };
-
-const gameButtonPressed = (event) => {
-  controlPressed.value = ''
-  if (event.data.control) {
-    controlPressed.value = event.data.control
-  }
-}
 </script>
 
 <style>

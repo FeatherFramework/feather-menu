@@ -10,7 +10,8 @@
                     <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
                 </svg>
             </button>
-            <div>{{ element.data.options[current]?.display ? element.data.options[current].display  : element.data.options[current] }}</div>
+            <div>{{ element.data.options[current]?.display ? element.data.options[current].display :
+                element.data.options[current] }}</div>
             <button :tabindex="element.index" class="selector-control" @click="dec">
                 <svg width="28pt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
@@ -25,6 +26,7 @@ import api from "../api";
 import { onMounted, ref, watch } from "vue";
 
 const current = ref(-1);
+const initiated = ref(false);
 
 const props = defineProps({
     element: {
@@ -35,16 +37,31 @@ const props = defineProps({
 
 onMounted(() => {
     current.value = props.element.data.start ? props.element.data.start - 1 : 0
+
+    setTimeout(() => {
+        initiated.value = true
+    }, 250);
 })
 
 
 watch(current, async (data) => {
-    api.post("onCallback", {
-        ...props.element,
-        value: props.element.data.options[data]
-    }).catch(e => {
-        console.log(e.message)
-    });
+    if (initiated.value == true) {
+        if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {
+            api.post("playsound", {
+                action: props.element.data.sound.action,
+                soundset: props.element.data.sound.soundset
+            }).catch(e => {
+                console.log(e.message)
+            });
+        }
+
+        api.post("onCallback", {
+            ...props.element,
+            value: props.element.data.options[data]
+        }).catch(e => {
+            console.log(e.message)
+        });
+    }
 })
 
 
@@ -63,12 +80,10 @@ const dec = () => {
 <style scoped>
 .selector-controls {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 0 23px;
-}
-
-.selector-control {
-    flex: 1;
+    text-align: center;
 }
 
 .selector-control:focus {

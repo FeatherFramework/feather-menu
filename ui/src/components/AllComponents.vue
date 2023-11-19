@@ -12,6 +12,7 @@
         <ToggleComp v-if="element.type === 'toggle'" :element="element"></ToggleComp>
         <HTMLComp v-if="element.type === 'html'" :element="element"></HTMLComp>
         <PageArrowsComp v-if="element.type === 'pagearrows'" :element="element"></PageArrowsComp>
+        <TextAreaComp v-if="element.type === 'textarea'" :element="element"></TextAreaComp>
     <!-- </div> -->
 </template>
   
@@ -28,6 +29,7 @@ import SliderComp from './SliderComp.vue';
 import ToggleComp from './ToggleComp.vue';
 import HTMLComp from './HTMLComp.vue';
 import PageArrowsComp from './PageArrowsComp.vue';
+import TextAreaComp from './TextAreaComp.vue';
 
 const props = defineProps({
     element: {

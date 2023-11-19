@@ -1,6 +1,6 @@
 <template>
     <div id="feathermenu" class="menu-wrap" :style="menudata?.config?.style || ''">
-        <div class="close" @click="closeApp">
+        <div class="close" @click="closeApp" v-if="menudata?.config?.canclose == true || menudata?.config?.canclose == null">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" fill="white">
                 <path
                     d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
@@ -31,7 +31,7 @@
 
 <script setup>
 import AllComponents from '@/components/AllComponents.vue';
-import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue';
+import { computed, onMounted, onUnmounted, ref, nextTick } from 'vue';
 
 const props = defineProps({
     menudata: {
@@ -39,9 +39,6 @@ const props = defineProps({
         required: true
     },
     focused: {
-        required: true
-    },
-    controlPressed: {
         required: true
     }
 })
@@ -105,32 +102,6 @@ const onKeyDown = (e) => {
         }
     }
 }
-
-watch(() => props.controlPressed, (newdata) => {
-    const tabs = window.document.querySelectorAll("[tabIndex]");
-    switch (newdata) {
-        case "DOWN":
-            if (currentPosition.value < tabs.length - 1) {
-                var newindexp = currentPosition.value + 1;
-                (tabs[newindexp]).focus();
-                currentPosition.value = newindexp;
-            }
-            break;
-        case "UP":
-            if (currentPosition.value < 0) {
-                (tabs[0]).focus();
-            }
-
-            if (currentPosition.value > 0) {
-                var newindexm = currentPosition.value - 1;
-                (tabs[newindexm]).focus();
-                currentPosition.value = newindexm;
-            }
-            break;
-        default:
-            break;
-    }
-})
 
 const HeaderContent = computed(() => {
     // This is null on first enact, so lets check and send nothing back so we bipass a null error.
