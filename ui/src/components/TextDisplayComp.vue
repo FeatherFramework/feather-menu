@@ -1,6 +1,6 @@
 <template>
     <div class="text-wrap" :style="element.data.style || ''">
-        {{ element.data.value }}
+        <p>{{ element.data.value }}</p>
     </div>
 </template>
   
