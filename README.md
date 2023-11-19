@@ -36,4 +36,4 @@
 
 ## TODO
 - UW resolution Support
-- Code cleanup
+- Persist options.value in all elements.

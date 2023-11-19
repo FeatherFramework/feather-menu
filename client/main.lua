@@ -214,12 +214,18 @@ function FeatherMenu:RegisterMenu(menuID, config)
 
                     SendNUIMessage(event)
                 end
+
+                return elemClass
             end
 
             function elemClass:callback(changeData)
                 if callback ~= nil then
                     callback(changeData)
                 end
+            end
+
+            function elemClass:unRegister()
+                pageClass.RegisteredElements[elemID] = nil
             end
 
             pageClass.RegistedElementsClasses[elemID] = elemClass
