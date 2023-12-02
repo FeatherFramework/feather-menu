@@ -73,6 +73,8 @@ const onKeyDown = (e) => {
         e.preventDefault()
         const tabs = window.document.querySelectorAll("[tabIndex]");
         const index = Array.from(tabs).indexOf(e.target);
+
+        if (tabs[index])
         (tabs[index]).click();
     }
 

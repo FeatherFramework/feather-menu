@@ -35,6 +35,12 @@ onMounted(() => {
     }, 250);
 })
 
+watch(() => props.element.data.value, async (val) => {
+    if (val !== null && typeof val !== 'undefined') {
+        value.value = val
+    }
+})
+
 watch(value, async (newValue) => {
     if (props.element.hasCallback == true && initiated.value == true) {
         if (timer.value) clearTimeout(timer.value);

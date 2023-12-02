@@ -1,11 +1,11 @@
 <template>
     <div v-if="element?.data" class="select-button" :style="element.data.style || ''">
-        <div>
+        <div v-if="element.data.label">
             {{ element.data.label }}
         </div>
 
         <div class="selector-controls">
-            <textarea :tabindex="element.index" :rows="element.data.rows || '4'" :cols="element.data.cols || '33'"  :style="{'resize': element.data.resize ? '' : 'none'}" v-model="value" :placeholder="element.data.placeholder"> </textarea>
+            <textarea :tabindex="element.index" :rows="element.data.rows || '4'" :cols="element.data.cols || '33'"  :style="{'resize': element.data.resize ? 'both' : 'none', 'width': element.data.cols? '' : '100%'}" v-model="value" :placeholder="element.data.placeholder"> </textarea>
         </div>
     </div>
 </template>
@@ -30,6 +30,12 @@ onMounted(() => {
     setTimeout(() => {
         initiated.value = true
     }, 250);
+})
+
+watch(() => props.element.data.value, async (val) => {
+    if (val !== null && typeof val !== 'undefined') {
+        value.value = val
+    }
 })
 
 watch(value, async (newValue) => {
@@ -83,7 +89,7 @@ watch(value, async (newValue) => {
 }
 
 textarea {
-    width: 100%;
+    /* width: 100%; */
     padding: 6px 10px;
     margin: 8px 0;
     box-sizing: border-box;

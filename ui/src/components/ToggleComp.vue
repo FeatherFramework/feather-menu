@@ -39,6 +39,12 @@ onMounted(() => {
     }, 250);
 })
 
+watch(() => props.element.data.value, async (value) => {
+    if (value !== null && typeof value !== 'undefined') {
+        current.value = value
+    }
+})
+
 watch(current, async (data) => {
     if (initiated.value == true) {
         if (props.element.data && props.element.data.sound && props.element.data.sound.action && props.element.data.sound.soundset) {

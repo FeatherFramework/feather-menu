@@ -3,16 +3,15 @@
         <div>
             {{ element.data.label }}
         </div>
-
         <div class="selector-controls">
             <vue-slider class="slider" v-model="current" :min="element.data.min || 0" :max="element.data.max || 100"
-                :interval="element.data.steps || 1" @change="handleChange" />
+                :interval="element.data.steps || 1" />
         </div>
     </div>
 </template>
   
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import api from "../api";
 import VueSlider from 'vue-slider-component'
 
@@ -39,7 +38,13 @@ onMounted(() => {
     }, 250);
 })
 
-const handleChange = () => {
+watch(() => props.element.data.value, async (value) => {
+    if (value !== null && typeof value !== 'undefined') {
+        current.value = value
+    }
+})
+
+watch(current, () => {
     if (initiated.value == true) {
         if (timer.value) clearTimeout(timer.value);
 
@@ -60,7 +65,7 @@ const handleChange = () => {
             });
         }, 500);
     }
-}
+})
 </script>
 <style scoped>
 .selector-controls {

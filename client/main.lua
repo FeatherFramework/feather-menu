@@ -185,7 +185,13 @@ function FeatherMenu:RegisterMenu(menuID, config)
             local elemClass = {}
 
             local index = pageClass.ElementCount
-            local elemID = elemType .. pageClass.ElementCount
+
+            local elemID = nil
+            if elemData ~= nil and elemData.id ~= nil then
+                elemID = elemData.id
+            else
+                elemID = elemType .. pageClass.ElementCount
+            end
 
             pageClass.RegisteredElements[elemID] = {
                 id = elemID,
