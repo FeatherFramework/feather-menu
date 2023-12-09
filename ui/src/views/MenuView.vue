@@ -1,6 +1,7 @@
 <template>
     <div id="feathermenu" class="menu-wrap" :style="menudata?.config?.style || ''">
-        <div class="close" @click="closeApp" v-if="menudata?.config?.canclose == true || menudata?.config?.canclose == null">
+        <div class="close" @click="closeApp"
+            v-if="menudata?.config?.canclose == true || menudata?.config?.canclose == null">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px" fill="white">
                 <path
                     d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
@@ -45,6 +46,7 @@ const props = defineProps({
 
 const emit = defineEmits(['dragged', 'closed'])
 
+const currentDirection = ref('down')
 const currentPosition = ref(0)
 
 const closeApp = () => {
@@ -68,40 +70,65 @@ onUnmounted(() => {
     window.removeEventListener("keydown", onKeyDown);
 });
 
+const moveUp = (e) => {
+    e.preventDefault()
+    const tabs = window.document.querySelectorAll("[tabIndex]");
+    const index = Array.from(tabs).indexOf(e.target);
+    if (index < 0) {
+        (tabs[0]).focus();
+    }
+
+    if (index > 0) {
+        var newindexm = index - 1;
+        (tabs[newindexm]).focus();
+        currentPosition.value = newindexm;
+
+        currentDirection.value = 'up'
+    }
+}
+
+const moveDown = (e) => {
+    e.preventDefault()
+    const tabs = window.document.querySelectorAll("[tabIndex]");
+    const index = Array.from(tabs).indexOf(e.target);
+
+    if (index < tabs.length - 1) {
+        var newindexp = index + 1;
+        (tabs[newindexp]).focus();
+        currentPosition.value = newindexp;
+
+        currentDirection.value = 'down'
+    }
+}
+
 const onKeyDown = (e) => {
+    if (document.activeElement.classList.contains("radarChart")) {
+        if (e.key === 'Enter') {
+            const tabs = window.document.querySelectorAll("[tabIndex]");
+            const index = Array.from(tabs).indexOf(e.target);
+            if (index <= 0) {
+                moveDown(e)
+            } else {
+                currentDirection.value == 'down' ? moveDown(e) : moveUp(e)
+            }
+        }
+        return
+    }
+
     if (e.key === 'Enter') {
         e.preventDefault()
         const tabs = window.document.querySelectorAll("[tabIndex]");
         const index = Array.from(tabs).indexOf(e.target);
 
         if (tabs[index])
-        (tabs[index]).click();
+            (tabs[index]).click();
     }
 
     if (e.key === 'ArrowDown') {
-        e.preventDefault()
-        const tabs = window.document.querySelectorAll("[tabIndex]");
-        const index = Array.from(tabs).indexOf(e.target);
-
-        if (index < tabs.length - 1) {
-            var newindexp = index + 1;
-            (tabs[newindexp]).focus();
-            currentPosition.value = newindexp;
-        }
+        moveDown(e)
     }
     if (e.key === 'ArrowUp') {
-        e.preventDefault()
-        const tabs = window.document.querySelectorAll("[tabIndex]");
-        const index = Array.from(tabs).indexOf(e.target);
-        if (index < 0) {
-            (tabs[0]).focus();
-        }
-
-        if (index > 0) {
-            var newindexm = index - 1;
-            (tabs[newindexm]).focus();
-            currentPosition.value = newindexm;
-        }
+        moveUp(e)
     }
 }
 
@@ -130,7 +157,7 @@ const ContentContent = computed(() => {
         return []
     }
 
-    return Object.keys(props.menudata.activepage.elements).filter((e => typeof props.menudata.activepage.elements[e]?.data?.slot == "undefined")).sort((a, b) => props.menudata.activepage.elements[a].index - props.menudata.activepage.elements[b].index).map(key => props.menudata.activepage.elements[key])
+    return Object.keys(props.menudata.activepage.elements).filter((e => typeof props.menudata.activepage.elements[e]?.data?.slot == "undefined" || props.menudata.activepage.elements[e]?.data?.slot == "content")).sort((a, b) => props.menudata.activepage.elements[a].index - props.menudata.activepage.elements[b].index).map(key => props.menudata.activepage.elements[key])
 })
 
 
