@@ -113,7 +113,7 @@ function FeatherMenu:RegisterMenu(menuID, config)
 
     -- close the menu
     function menuClass:Close(options)
-        if FeatherMenu.activeMenu.menuID == menuID then
+        if FeatherMenu.activeMenu and FeatherMenu.activeMenu.menuID == menuID then
             local event = {
                 action = 'closemenu',
                 menuid = menuID
