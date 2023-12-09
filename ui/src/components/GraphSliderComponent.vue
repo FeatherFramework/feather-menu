@@ -188,7 +188,12 @@ watch(output, () => {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+
+  background-image: url(../assets/grid_1a.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .select-content .top,
