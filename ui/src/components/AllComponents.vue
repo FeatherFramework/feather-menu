@@ -13,6 +13,8 @@
         <HTMLComp v-if="element.type === 'html'" :element="element"></HTMLComp>
         <PageArrowsComp v-if="element.type === 'pagearrows'" :element="element"></PageArrowsComp>
         <TextAreaComp v-if="element.type === 'textarea'" :element="element"></TextAreaComp>
+        <GraphSliderComponent v-if="element.type === 'gridslider'" :element="element"></GraphSliderComponent>
+        <CheckboxComponent v-if="element.type === 'checkbox'" :element="element"></CheckboxComponent>
     <!-- </div> -->
 </template>
   
@@ -30,6 +32,8 @@ import ToggleComp from './ToggleComp.vue';
 import HTMLComp from './HTMLComp.vue';
 import PageArrowsComp from './PageArrowsComp.vue';
 import TextAreaComp from './TextAreaComp.vue';
+import GraphSliderComponent from './GraphSliderComponent.vue';
+import CheckboxComponent from './CheckboxComponent.vue';
 
 const props = defineProps({
     element: {

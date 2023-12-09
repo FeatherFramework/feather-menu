@@ -244,6 +244,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
                 pageClass.RegisteredElements[elemID] = nil
             end
 
+            function elemClass:UnRegister()
+                pageClass.RegisteredElements[elemID] = nil
+            end
+
             pageClass.RegistedElementsClasses[elemID] = elemClass
             return elemClass
         end
