@@ -28,7 +28,7 @@ RegisterNUICallback('onCallback', function(data, cb)
     cb('ok')
 end)
 
-function FeatherMenu:RegisterMenu(menuID, config)
+function FeatherMenu:RegisterMenu(menuID, config, callbacks)
     -------- Menu Class and logic --------
     local menuClass = {
         RegisteredPages = {},
@@ -95,6 +95,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
         SendNUIMessage(event)
         OutBoundEvents.menuopened(event)
 
+        if callbacks ~= nil and callbacks.opened then
+            callbacks.opened(event)
+        end
+
         SetNuiFocus(options.menuFocus, options.cursorFocus)
 
         -- This helps to maintain the proper nui focus/count
@@ -121,6 +125,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
 
             SendNUIMessage(event)
             OutBoundEvents.menuclosed(event)
+            
+            if callbacks ~= nil and callbacks.closed then
+                callbacks.closed(event)
+            end
 
             -- This helps to maintain the proper nui focus/count
             FeatherMenu.activeMenu = nil
@@ -178,6 +186,10 @@ function FeatherMenu:RegisterMenu(menuID, config)
 
                 SendNUIMessage(event)
                 OutBoundEvents.pagerouteto(event)
+
+                if callbacks ~= nil and callbacks.topage then
+                    callbacks.topage(event)
+                end
             end
         end
 

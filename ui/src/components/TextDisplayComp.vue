@@ -23,6 +23,7 @@ defineProps({
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 1em;
+    white-space: pre-line;
 }
 </style>
   
