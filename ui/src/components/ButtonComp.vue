@@ -2,12 +2,20 @@
     <div 
         @click="emitButton" 
         :tabindex="element.index" 
-        v-if="element?.data" 
+        v-if="element?.data && !element?.data?.html" 
+        class="feather-button"
+        :style="element.data.style || ''"
+    >
+        {{ element.data.label }}
+    </div>
+    <div 
+        @click="emitButton" 
+        :tabindex="element.index" 
+        v-if="element?.data && element?.data?.html" 
         class="feather-button"
         :style="element.data.style || ''"
         v-html="element.data.html"
-        >
-        {{ element.data.label }}
+    >
     </div>
 </template>
   
