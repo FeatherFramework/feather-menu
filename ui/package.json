@@ -1,6 +1,6 @@
 {
   "name": "feather-menu",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "serve": "NODE_ENV=development yarn run shim && vue-cli-service serve",
