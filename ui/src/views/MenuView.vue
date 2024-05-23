@@ -130,6 +130,10 @@ const onKeyDown = (e) => {
     if (e.key === 'ArrowUp') {
         moveUp(e)
     }
+
+    if (e.key === "Escape" && (props.menudata?.config?.canclose == null || props.menudata?.config?.canclose == true)) {
+        closeApp()
+    }
 }
 
 const HeaderContent = computed(() => {
