@@ -15,6 +15,7 @@
         <TextAreaComp v-if="element.type === 'textarea'" :element="element"></TextAreaComp>
         <GraphSliderComponent v-if="element.type === 'gridslider'" :element="element"></GraphSliderComponent>
         <CheckboxComponent v-if="element.type === 'checkbox'" :element="element"></CheckboxComponent>
+        <DropdownSelector v-if="element.type === 'dropdown'" :options="element.data.options" :value="element.data.selectedValue" :placeholder="element.data.placeholder || 'Select an option'" @update:value="updateSelectedValue"/>
     <!-- </div> -->
 </template>
   
@@ -47,5 +48,9 @@ const emit = defineEmits(['dragged'])
 const handleDrag = (event) => {
     if (props.element.data.draggable == true || typeof props.element.data.draggable == 'undefined') emit('dragged', event)
 }
+
+const updateSelectedValue = (newValue) => {
+    emit('update-element', { ...props.element, data: { ...props.element.data, selectedValue: newValue } });
+};
 
 </script>
