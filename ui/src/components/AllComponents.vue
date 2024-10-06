@@ -35,6 +35,7 @@ import PageArrowsComp from './PageArrowsComp.vue';
 import TextAreaComp from './TextAreaComp.vue';
 import GraphSliderComponent from './GraphSliderComponent.vue';
 import CheckboxComponent from './CheckboxComponent.vue';
+import DropdownSelector from './DropdownSelector.vue';
 
 const props = defineProps({
     element: {
