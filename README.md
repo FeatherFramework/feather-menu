@@ -12,6 +12,7 @@
    - button
    - input
    - slider
+   - Dropdown Select
    - custom html
    - and much more!
 
@@ -36,6 +37,5 @@
 
 ## TODO
 - Keyboard/Controller native buttons (so that we can allow for things like prompts)
-- Dropdown Select
 - Color pickers
 - Radio buttons
