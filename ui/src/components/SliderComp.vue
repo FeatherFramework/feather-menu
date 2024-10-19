@@ -5,7 +5,7 @@
         </div>
         <div class="selector-controls">
             <vue-slider class="slider" v-model="current" :min="element.data.min || 0" :max="element.data.max || 100"
-                :interval="element.data.steps || 1" />
+                :interval="element.data.steps || 1" tooltip-placement="left"/>
         </div>
     </div>
 </template>
@@ -67,6 +67,16 @@ watch(current, () => {
     }
 })
 </script>
+<style>
+.vue-slider-dot-tooltip-inner {
+    border-color: #c56d6d;
+    background-color: #a74040;
+}
+
+.vue-slider-process {
+    background-color: #8d1414;
+}
+</style>
 <style scoped>
 .selector-controls {
     display: flex;
