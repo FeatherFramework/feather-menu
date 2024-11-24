@@ -33,7 +33,7 @@
 <script setup>
 import AllComponents from '@/components/AllComponents.vue';
 import { computed, onMounted, onUnmounted, ref, nextTick } from 'vue';
-
+import api from "../api";
 const props = defineProps({
     menudata: {
         type: Object,
@@ -101,7 +101,25 @@ const moveDown = (e) => {
     }
 }
 
+const keyListener = async (event) => {
+    let keyCodes = Object.keys(props.menudata?.config?.keyclicks) ?? 0
+    let keyIndex = keyCodes.indexOf(event.key)
+    if (keyIndex >= 0) {
+        const keyclick = keyCodes[keyIndex];
+        if (event.keyCode == keyclick || event.key == keyclick) {
+            api.post("onKeyClicked", {
+                menuID: props.menudata.activepage.menuid,
+                key: keyclick
+            }).catch(e => {
+                console.log(e.message)
+            });
+        }
+    }
+}
+
 const onKeyDown = (e) => {
+    if (Object.keys(props.menudata?.config?.keyclicks).length > 0) keyListener(e);
+
     if (document.activeElement.classList.contains("radarChart")) {
         if (e.key === 'Enter') {
             const tabs = window.document.querySelectorAll("[tabIndex]");
