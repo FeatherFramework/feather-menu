@@ -28,6 +28,14 @@ RegisterNUICallback('onCallback', function(data, cb)
     cb('ok')
 end)
 
+RegisterNUICallback('onKeyClicked', function(data, cb)
+    if FeatherMenu.RegisteredMenus[data.menuID] then
+        FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks[data.key]()
+    end
+ 
+    cb('ok')
+end)
+
 function FeatherMenu:RegisterMenu(menuID, config, callbacks)
     -------- Menu Class and logic --------
     local menuClass = {
@@ -44,6 +52,8 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
         class = menuClass,
         allowKeys = true
     }
+
+
 
     FeatherMenu.MenuCount = FeatherMenu.MenuCount + 1
 
@@ -139,6 +149,11 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
                 PlaySound(options.sound.action, options.sound.soundset)
             end
         end
+    end
+
+    -- Register a keyclick callback
+    function menuClass:RegisterKeyClick()
+
     end
 
     -- Register a page to the menu
