@@ -83,7 +83,7 @@ import TextAreaComp from "./TextAreaComp.vue";
 import GraphSliderComponent from "./GraphSliderComponent.vue";
 import CheckboxComponent from "./CheckboxComponent.vue";
 import DropdownSelector from "./DropdownSelector.vue";
-import DatePicker from "./DatepickerComp.vue";
+// import DatePicker from "./DatepickerComp.vue";
 
 const props = defineProps({
   element: {
