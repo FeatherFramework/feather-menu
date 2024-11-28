@@ -32,7 +32,7 @@
 
 <script setup>
 import AllComponents from '@/components/AllComponents.vue';
-import { computed, onMounted, onUnmounted, ref, nextTick } from 'vue';
+import { computed, onMounted, onUnmounted, ref, nextTick, onBeforeMount } from 'vue';
 import api from "../api";
 const props = defineProps({
     menudata: {
@@ -57,6 +57,42 @@ const handleDrag = (event) => {
     emit('dragged', event)
 }
 
+
+const setupFont = () => {
+    if (props?.menudata?.config?.font?.url || props?.menudata?.config?.font?.nuiUrl) {
+        let newStyle = document.createElement('style');
+        newStyle.id = props?.menudata?.menuid
+
+        let importable = ''
+
+        if (props?.menudata?.config?.font?.url) {
+            importable = `@import url('${props?.menudata?.config?.font?.url ?? 'rdr'}');`
+        } else if (props?.menudata?.config?.font?.nuiUrl) {
+             importable = `@font-face {
+                font-family: ${props?.menudata?.config?.font?.fontFamily};
+                src: url(${props?.menudata?.config?.font?.nuiUrl});
+            }`
+        }
+
+        newStyle.appendChild(document.createTextNode(`${importable}
+
+        #app { font-family: "${props?.menudata?.config?.font?.fontFamily ?? 'rdr'}", rdr, sans-serif !important; }`));
+        document.head.appendChild(newStyle);
+    }
+}
+
+const removeFont = () => {
+    if (props?.menudata?.config?.font?.url || props?.menudata?.config?.font?.nuiUrl) {
+        let fontStyle = document.getElementById(props?.menudata?.activepage?.menuid);
+        fontStyle?.remove();
+    }
+}
+
+onBeforeMount(() => {
+    setupFont()
+})
+
+
 onMounted(() => {
     nextTick(() => {
         window.focus();
@@ -68,6 +104,8 @@ onMounted(() => {
 onUnmounted(() => {
     currentPosition.value = 0;
     window.removeEventListener("keydown", onKeyDown);
+
+    removeFont()
 });
 
 const moveUp = (e) => {
@@ -118,7 +156,7 @@ const keyListener = async (event) => {
 }
 
 const onKeyDown = (e) => {
-    if (Object.keys(props.menudata?.config?.keyclicks).length > 0) keyListener(e);
+    if (props.menudata?.config?.keyclicks && Object.keys(props.menudata?.config?.keyclicks).length > 0) keyListener(e);
 
     if (document.activeElement.classList.contains("radarChart")) {
         if (e.key === 'Enter') {

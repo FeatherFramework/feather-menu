@@ -20,6 +20,7 @@ onUnmounted(() => {
   window.removeEventListener("message", onMessage);
 });
 
+
 const onMessage = (event) => {
   switch (event.data.action) {
     case "openmenu":

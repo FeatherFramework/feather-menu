@@ -1,5 +1,4 @@
 <template>
-  <!-- <div v-for="(element, index) in sortedActivePage" :key="'element' + index + activepage.pageid + activepage.menuid"> -->
   <div>
     <HeaderComp
       v-if="element.type === 'header'"
@@ -61,7 +60,6 @@
       :placeholder="element.data.placeholder || 'Select an option'"
     />
   </div>
-  <!-- </div> -->
 </template>
   
 <script setup>
