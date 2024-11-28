@@ -2,15 +2,18 @@
   <div v-for="(registeredMenu, menuid) in RegisteredMenus" :key="'MENU' + menuid">
     <Draggable v-if="registeredMenu !== null" :menudata="registeredMenu"></Draggable>
   </div>
+  <NotificationView ref="noty"></NotificationView>
 </template>
 
 <script setup>
-import { reactive, onMounted, onUnmounted } from "vue";
+import { reactive, ref, onMounted, onUnmounted } from "vue";
 import "@/assets/styles/main.css";
 
 import Draggable from "./components/Draggable.vue";
+import NotificationView from "./views/NotificationView.vue";
 
 const RegisteredMenus = reactive({})
+const noty = ref(null)
 
 onMounted(() => {
   window.addEventListener("message", onMessage);
@@ -20,16 +23,17 @@ onUnmounted(() => {
   window.removeEventListener("message", onMessage);
 });
 
-
 const onMessage = (event) => {
   switch (event.data.action) {
+    case "queueNoty":
+      noty.value.queueNoty(event.data.id, event.data.config)
+      break;
     case "openmenu":
       RegisteredMenus[event.data.menuid] = {
         menuid: event.data.menuid,
         config: event.data.config,
         activepage: {}
       }
-
       break;
     case "closemenu":
       RegisteredMenus[event.data.menuid] = null
@@ -51,7 +55,6 @@ const onMessage = (event) => {
   font-family: rdr;
   src: url(assets/fonts/rdrlino-regular-webfont.woff);
 }
-
 
 #app {
   font-family: rdr, Avenir, Helvetica, Arial, sans-serif;
