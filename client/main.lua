@@ -1,9 +1,12 @@
 FeatherMenu = {
     RegisteredMenus = {},
+    RegisteredAlerts = {},
     MenuCount = 0,
     ActiveMenu = nil,
     ActiveOptions = {}
 }
+
+LastID = 0
 
 RegisterNUICallback('playsound', function(data, cb)
     PlaySound(data.action, data.soundset)
@@ -32,7 +35,19 @@ RegisterNUICallback('onKeyClicked', function(data, cb)
     if FeatherMenu.RegisteredMenus[data.menuID] then
         FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks[data.key]()
     end
- 
+
+    cb('ok')
+end)
+
+RegisterNUICallback('onAlertAction', function(data, cb)
+    if FeatherMenu.RegisteredAlerts[data.id] then
+        FeatherMenu.RegisteredAlerts[data.id](data)
+
+        if data.type == 'closed' then
+            FeatherMenu.RegisteredAlerts[data.id] = nil
+        end
+    end
+
     cb('ok')
 end)
 
@@ -135,7 +150,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
 
             SendNUIMessage(event)
             OutBoundEvents.menuclosed(event)
-            
+
             if callbacks ~= nil and callbacks.closed then
                 callbacks.closed(event)
             end
@@ -149,11 +164,6 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
                 PlaySound(options.sound.action, options.sound.soundset)
             end
         end
-    end
-
-    -- Register a keyclick callback
-    function menuClass:RegisterKeyClick()
-
     end
 
     -- Register a page to the menu
@@ -233,7 +243,8 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
             pageClass.ElementCount = pageClass.ElementCount + 1
 
             function elemClass:update(newElemData)
-                pageClass.RegisteredElements[elemID].data = TableMerge(pageClass.RegisteredElements[elemID].data, newElemData)
+                pageClass.RegisteredElements[elemID].data = TableMerge(pageClass.RegisteredElements[elemID].data,
+                    newElemData)
 
                 if FeatherMenu.activeMenu.menuID == menuID and menuClass.RegisteredPages[pageID].active == true then
                     local event = {
@@ -285,6 +296,27 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
 
     FeatherMenu.RegisteredMenus[menuID].class = menuClass
     return menuClass
+end
+
+function FeatherMenu:Notify(config, callback)
+    local event = {
+        action = 'queueNoty',
+        config = config
+    }
+
+    if callback then
+        local id = LastID + 1
+        LastID = id
+
+        FeatherMenu.RegisteredAlerts[id] = callback
+        event = {
+            id = id,
+            action = 'queueNoty',
+            config = config
+        }
+    end
+
+    SendNUIMessage(event)
 end
 
 exports('initiate', function()

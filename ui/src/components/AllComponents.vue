@@ -1,5 +1,4 @@
 <template>
-  <!-- <div v-for="(element, index) in sortedActivePage" :key="'element' + index + activepage.pageid + activepage.menuid"> -->
   <div>
     <HeaderComp
       v-if="element.type === 'header'"
@@ -53,6 +52,10 @@
       v-if="element.type === 'checkbox'"
       :element="element"
     ></CheckboxComponent>
+    <DatePicker
+      v-if="element.type === 'datepicker'"
+      :element="element"
+    ></DatePicker>
     <DropdownSelector
       v-if="element.type === 'dropdown'"
       :element="element"
@@ -61,7 +64,6 @@
       :placeholder="element.data.placeholder || 'Select an option'"
     />
   </div>
-  <!-- </div> -->
 </template>
   
 <script setup>
@@ -81,6 +83,7 @@ import TextAreaComp from "./TextAreaComp.vue";
 import GraphSliderComponent from "./GraphSliderComponent.vue";
 import CheckboxComponent from "./CheckboxComponent.vue";
 import DropdownSelector from "./DropdownSelector.vue";
+import DatePicker from "./DatepickerComp.vue";
 
 const props = defineProps({
   element: {
