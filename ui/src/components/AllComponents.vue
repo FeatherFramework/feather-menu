@@ -52,6 +52,10 @@
       v-if="element.type === 'checkbox'"
       :element="element"
     ></CheckboxComponent>
+    <DatePicker
+      v-if="element.type === 'datepicker'"
+      :element="element"
+    ></DatePicker>
     <DropdownSelector
       v-if="element.type === 'dropdown'"
       :element="element"
@@ -79,6 +83,7 @@ import TextAreaComp from "./TextAreaComp.vue";
 import GraphSliderComponent from "./GraphSliderComponent.vue";
 import CheckboxComponent from "./CheckboxComponent.vue";
 import DropdownSelector from "./DropdownSelector.vue";
+import DatePicker from "./DatepickerComp.vue";
 
 const props = defineProps({
   element: {
