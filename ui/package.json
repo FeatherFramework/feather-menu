@@ -9,6 +9,7 @@
     "shim": "node build/fxupdate.js"
   },
   "dependencies": {
+    "@vuepic/vue-datepicker": "^10.0.0",
     "autoprefixer": "^10",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",

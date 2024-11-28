@@ -52,10 +52,10 @@
       v-if="element.type === 'checkbox'"
       :element="element"
     ></CheckboxComponent>
-    <DatePicker
+    <!-- <DatePicker
       v-if="element.type === 'datepicker'"
       :element="element"
-    ></DatePicker>
+    ></DatePicker> -->
     <DropdownSelector
       v-if="element.type === 'dropdown'"
       :element="element"
