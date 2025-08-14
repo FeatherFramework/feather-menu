@@ -16,11 +16,14 @@ const queueNoty = (id, noty) => {
         transition: noty?.transition ?? "zoom", //bounce, flip, slide, zoom
         autoClose: noty?.autoClose ?? 3000,
         position: noty?.position ?? 'top-right', //top-left top-center top-right bottom-left bottom-center bottom-right
-        toastStyle: noty?.toastStyle ?? null,
+    toastStyle: {zIndex: "100001", // ensure it stacks above the menu
+      ...noty.toastStyle
+    },
         style: noty?.style ?? null,
         progressStyle: noty?.progressStyle ?? null,
         icon: noty?.icon ?? false, // can copy/paste emoji here. Or set to true for default icons.
         pauseOnHover: false,
+        pauseOnFocusLoss: false,
         theme: "dark",
         closeButton: false,
         closeOnClick: false,
