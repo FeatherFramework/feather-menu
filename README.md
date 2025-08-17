@@ -31,6 +31,7 @@
 ![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/0bf164cb-2fc7-45fb-8b36-25795e4798da)
 ![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/a6b73f8e-a851-4478-b332-5b20559ac9a5)
 ![image](https://github.com/FeatherFramework/feather-menu/assets/10902965/2a689fa2-b51d-426a-a754-a8287ed4c755)
+![image](https://github.com/user-attachments/assets/78d0da2c-ee24-4c2c-9f6a-b6bfed8a2bbf)
 
 ### Notifications
 ![notifications](https://github.com/user-attachments/assets/aef5b174-9e82-470e-b2a6-2a6b196e9ece)
