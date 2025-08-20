@@ -63,6 +63,10 @@
       :value="element.data.selectedValue"
       :placeholder="element.data.placeholder || 'Select an option'"
     />
+    <ImageBoxContainer
+      v-if="element.type === 'imageboxcontainer'"
+      :element="element"
+    />
   </div>
 </template>
   
