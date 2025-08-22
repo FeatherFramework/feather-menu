@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from "vue"
+import { ref, watch } from "vue"
 import api from "../api"
 import placeholder from "../assets/_placeholder.png"
 
