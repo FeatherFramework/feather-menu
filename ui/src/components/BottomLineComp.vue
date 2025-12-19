@@ -23,5 +23,6 @@ defineProps({
     background-position: center;
     background-size: 100% 100%;
     opacity: 0.6;
+    pointer-events: none;
 }
 </style>
