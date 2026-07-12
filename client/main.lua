@@ -2,7 +2,7 @@ FeatherMenu = {
     RegisteredMenus = {},
     RegisteredAlerts = {},
     MenuCount = 0,
-    ActiveMenu = nil,
+    activeMenu = nil,
     ActiveOptions = {}
 }
 
