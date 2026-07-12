@@ -6,113 +6,97 @@
     </div>
 </template>
   
-<script>
+<script setup>
+import { ref, reactive, watch, onMounted } from 'vue'
 import MenuView from '../views/MenuView.vue'
 import api from '../api'
 
-export default {
-    name: 'DraggableDiv',
-    data: function () {
-
-        return {
-            positions: {
-                clientX: undefined,
-                clientY: undefined,
-                movementX: 0,
-                movementY: 0
-            },
-            activefocused: false,
-            z: 1
-        }
-    },
-    components: {
-        'MenuView': MenuView
-    },
-    props: {
-        menudata: {
-            type: Object,
-            required: true
-        }
-    },
-    mounted() {
-        if (this.menudata?.config?.draggable == false) {
-            this.$refs.draggableContainer.style.top = this.menudata.config.top || '50%'
-            this.$refs.draggableContainer.style.left = this.menudata.config.left || '50%'
-        } else {
-            this.$refs.draggableContainer.style.top = localStorage.getItem(this.menudata.menuid + 'Top') || this.menudata.config.top || '50%'
-            this.$refs.draggableContainer.style.left = localStorage.getItem(this.menudata.menuid + 'Left') || this.menudata.config.left || '50%'
-        }
-
-        // Set the dimensions of the menu container
-        // this.$refs.draggableContainer.style.width = this.menudata.config.width || '600px'
-        this.$refs.draggableContainer.style.height = this.menudata.config.height || ''
-    },
-    watch: {
-        // 'menudata.config.width': function (data) {
-        //     this.$refs.draggableContainer.style.width = data || '600px'
-        // },
-        'menudata.config.height': function (data) {
-            this.$refs.draggableContainer.style.height = data || ''
-        },
-        'positions.clientX': function () {
-            localStorage.setItem(this.menudata.menuid + 'Top', this.$refs.draggableContainer.style.top)
-        },
-        'positions.clientY': function () {
-            localStorage.setItem(this.menudata.menuid + 'Left', this.$refs.draggableContainer.style.left)
-        },
-        'activefocused': function (data) {
-            if (data === this.menudata.menuid) {
-                this.$refs.draggableContainer.style['z-index'] = '99'
-            } else {
-                this.$refs.draggableContainer.style['z-index'] = '94'
-            }
-        },
-    },
-    computed: {
-    },
-    methods: {
-        handleClosed: function () {
-            api.post("onClose", {
-                menuid: this.menudata.menuid
-            }).catch(e => {
-                console.log(e.message)
-            });
-        },
-        dragMouseDown: function (event) {
-            event.preventDefault()
-
-            if (!(this.menudata.config.draggable == false)) {
-                // get the mouse cursor position at startup:
-                this.positions.clientX = event.clientX
-                this.positions.clientY = event.clientY
-                document.onmousemove = this.elementDrag
-                document.onmouseup = this.closeDragElement
-            }
-        },
-        dragMouseDownFocus: function () {
-            this.activefocused = this.menudata.menuid
-        },
-        elementDrag: function (event) {
-            event.preventDefault()
-            this.positions.movementX = this.positions.clientX - event.clientX
-            this.positions.movementY = this.positions.clientY - event.clientY
-            this.positions.clientX = event.clientX
-            this.positions.clientY = event.clientY
-            // set the element's new position:
-
-            this.$refs.draggableContainer.style['z-index'] = '99'
-            this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
-            this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
-        },
-        closeDragElement() {
-            document.onmouseup = null
-            document.onmousemove = null
-
-            // this.$refs.draggableContainer.style['z-index'] = '99'
-            this.z++
-
-        }
+const props = defineProps({
+    menudata: {
+        type: Object,
+        required: true
     }
+})
+
+const draggableContainer = ref(null)
+const activefocused = ref(false)
+const positions = reactive({
+    clientX: undefined,
+    clientY: undefined,
+    movementX: 0,
+    movementY: 0
+})
+
+onMounted(() => {
+    if (props.menudata?.config?.draggable == false) {
+        draggableContainer.value.style.top = props.menudata.config.top || '50%'
+        draggableContainer.value.style.left = props.menudata.config.left || '50%'
+    } else {
+        draggableContainer.value.style.top = localStorage.getItem(props.menudata.menuid + 'Top') || props.menudata.config.top || '50%'
+        draggableContainer.value.style.left = localStorage.getItem(props.menudata.menuid + 'Left') || props.menudata.config.left || '50%'
+    }
+
+    draggableContainer.value.style.height = props.menudata.config.height || ''
+})
+
+watch(() => props.menudata.config.height, (data) => {
+    draggableContainer.value.style.height = data || ''
+})
+
+watch(() => positions.clientX, () => {
+    localStorage.setItem(props.menudata.menuid + 'Top', draggableContainer.value.style.top)
+})
+
+watch(() => positions.clientY, () => {
+    localStorage.setItem(props.menudata.menuid + 'Left', draggableContainer.value.style.left)
+})
+
+watch(activefocused, (data) => {
+    if (data === props.menudata.menuid) {
+        draggableContainer.value.style['z-index'] = '99'
+    } else {
+        draggableContainer.value.style['z-index'] = '94'
+    }
+})
+
+const handleClosed = () => {
+    api.post("onClose", {
+        menuid: props.menudata.menuid
+    }).catch(e => {
+        console.error(e.message)
+    })
+}
+
+const dragMouseDown = (event) => {
+    event.preventDefault()
+
+    if (!(props.menudata.config.draggable == false)) {
+        positions.clientX = event.clientX
+        positions.clientY = event.clientY
+        document.onmousemove = elementDrag
+        document.onmouseup = closeDragElement
+    }
+}
+
+const dragMouseDownFocus = () => {
+    activefocused.value = props.menudata.menuid
+}
+
+const elementDrag = (event) => {
+    event.preventDefault()
+    positions.movementX = positions.clientX - event.clientX
+    positions.movementY = positions.clientY - event.clientY
+    positions.clientX = event.clientX
+    positions.clientY = event.clientY
+
+    draggableContainer.value.style['z-index'] = '99'
+    draggableContainer.value.style.top = (draggableContainer.value.offsetTop - positions.movementY) + 'px'
+    draggableContainer.value.style.left = (draggableContainer.value.offsetLeft - positions.movementX) + 'px'
+}
+
+const closeDragElement = () => {
+    document.onmouseup = null
+    document.onmousemove = null
 }
 </script>
   
@@ -121,10 +105,6 @@ export default {
     position: absolute;
     transition: width 0.04s ease, height 0.04s ease;
     touch-action: none;
-}
-
-#draggable-header {
-    /* z-index: 10; */
 }
 
 /* Resolution support */
