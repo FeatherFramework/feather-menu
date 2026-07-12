@@ -33,7 +33,10 @@ end)
 
 RegisterNUICallback('onKeyClicked', function(data, cb)
     if FeatherMenu.RegisteredMenus[data.menuID] then
-        FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks[data.key]()
+        local keyclicks = FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks
+        if keyclicks and keyclicks[data.key] then
+            keyclicks[data.key]()
+        end
     end
 
     cb('ok')
