@@ -1,3 +1,16 @@
+local parseVersion = function(v)
+    local major, minor, patch = v:match("(%d+)%.(%d+)%.?(%d*)")
+    return tonumber(major) or 0, tonumber(minor) or 0, tonumber(patch) or 0
+end
+
+local compareVersions = function(a, b)
+    local aMaj, aMin, aPat = parseVersion(a)
+    local bMaj, bMin, bPat = parseVersion(b)
+    if aMaj ~= bMaj then return aMaj - bMaj end
+    if aMin ~= bMin then return aMin - bMin end
+    return aPat - bPat
+end
+
 local checkFile = function(resourcename, repo)
     local cleanrepo = repo:gsub("https://github.com/", "")
 
@@ -15,9 +28,10 @@ local checkFile = function(resourcename, repo)
             local uptodate = false
             local overdate = false
 
-            if current.version > latest.version then
+            local cmp = compareVersions(current.version, latest.version)
+            if cmp > 0 then
                 overdate = true
-            elseif current.version < latest.version then
+            elseif cmp < 0 then
                 uptodate = false
             else
                 uptodate = true
