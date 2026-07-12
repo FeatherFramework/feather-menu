@@ -149,7 +149,7 @@ const keyListener = async (event) => {
                 menuID: props.menudata.activepage.menuid,
                 key: keyclick
             }).catch(e => {
-                console.log(e.message)
+                console.error(e.message)
             });
         }
     }

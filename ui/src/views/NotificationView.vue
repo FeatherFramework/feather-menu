@@ -33,7 +33,7 @@ const queueNoty = (id, noty) => {
                     type: 'opened',
                     id: id
                 }).catch(e => {
-                    console.log(e.message)
+                    console.error(e.message)
                 });
                 opened = true
             }
@@ -44,7 +44,7 @@ const queueNoty = (id, noty) => {
                     type: 'closed',
                     id: id
                 }).catch(e => {
-                    console.log(e.message)
+                    console.error(e.message)
                 });
                 closed = true
             }

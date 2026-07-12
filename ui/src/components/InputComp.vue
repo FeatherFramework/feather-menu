@@ -50,7 +50,7 @@ watch(value, async (newValue) => {
                 ...props.element,
                 value: newValue || '',
             }).catch(e => {
-                console.log(e.message)
+                console.error(e.message)
             });
         }, 500);
     }
@@ -63,9 +63,6 @@ watch(value, async (newValue) => {
     margin: 0 23px;
 }
 
-.selector-control {
-    /* flex: 1; */
-}
 
 .select-button {
     width: 84%;
