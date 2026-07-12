@@ -89,7 +89,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
             config = config,
         }
 
-        if options == nill then
+        if options == nil then
             options = {}
         end
 
