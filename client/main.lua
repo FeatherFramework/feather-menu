@@ -188,7 +188,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
         menuClass.PageCount = menuClass.PageCount + 1
 
         function pageClass:getElementClass(eid)
-            return pageClass.RegisteredElements(eid):getElementClass()
+            return pageClass.RegisteredElements[eid]:getElementClass()
         end
 
         function pageClass:UnRegister()
