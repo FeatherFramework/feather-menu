@@ -130,7 +130,7 @@ export default {
 /* Resolution support */
 
 /* 720p */
-@media only screen and (min-width: 1280) {
+@media only screen and (min-width: 1280px) {
     #draggable-container {
         width: var(--shd);
     }
