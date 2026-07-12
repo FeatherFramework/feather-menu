@@ -83,7 +83,7 @@ const setupFont = () => {
 
 const removeFont = () => {
     if (props?.menudata?.config?.font?.url || props?.menudata?.config?.font?.nuiUrl) {
-        let fontStyle = document.getElementById(props?.menudata?.activepage?.menuid);
+        let fontStyle = document.getElementById(props?.menudata?.menuid);
         fontStyle?.remove();
     }
 }
