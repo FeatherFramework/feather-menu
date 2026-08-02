@@ -60,7 +60,7 @@ watch(current, async (data) => {
                 action: props.element.data.sound.action,
                 soundset: props.element.data.sound.soundset
             }).catch(e => {
-                console.log(e.message)
+                console.error(e.message)
             });
         }
 
@@ -69,7 +69,7 @@ watch(current, async (data) => {
             value: props.element.data.options[data],
             persistindex: data
         }).catch(e => {
-            console.log(e.message)
+            console.error(e.message)
         });
     }
 })

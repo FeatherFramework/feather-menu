@@ -83,7 +83,7 @@ const setupFont = () => {
 
 const removeFont = () => {
     if (props?.menudata?.config?.font?.url || props?.menudata?.config?.font?.nuiUrl) {
-        let fontStyle = document.getElementById(props?.menudata?.activepage?.menuid);
+        let fontStyle = document.getElementById(props?.menudata?.menuid);
         fontStyle?.remove();
     }
 }
@@ -149,7 +149,7 @@ const keyListener = async (event) => {
                 menuID: props.menudata.activepage.menuid,
                 key: keyclick
             }).catch(e => {
-                console.log(e.message)
+                console.error(e.message)
             });
         }
     }

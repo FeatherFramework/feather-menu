@@ -35,12 +35,12 @@ const emitButton = () => {
             action: props.element.data.sound.action,
             soundset: props.element.data.sound.soundset
         }).catch(e => {
-            console.log(e.message)
+            console.error(e.message)
         });
     }
 
     api.post("onCallback", props.element).catch(e => {
-        console.log(e.message)
+        console.error(e.message)
     });
 }
 </script>

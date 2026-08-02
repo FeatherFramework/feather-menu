@@ -9,7 +9,7 @@
 import { reactive, ref, onMounted, onUnmounted } from "vue";
 import "@/assets/styles/main.css";
 
-import Draggable from "./components/Draggable.vue";
+import Draggable from "./components/DraggableContainer.vue";
 import NotificationView from "./views/NotificationView.vue";
 
 const RegisteredMenus = reactive({})

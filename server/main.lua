@@ -1,3 +1,16 @@
+local parseVersion = function(v)
+    local major, minor, patch = v:match("(%d+)%.(%d+)%.?(%d*)")
+    return tonumber(major) or 0, tonumber(minor) or 0, tonumber(patch) or 0
+end
+
+local compareVersions = function(a, b)
+    local aMaj, aMin, aPat = parseVersion(a)
+    local bMaj, bMin, bPat = parseVersion(b)
+    if aMaj ~= bMaj then return aMaj - bMaj end
+    if aMin ~= bMin then return aMin - bMin end
+    return aPat - bPat
+end
+
 local checkFile = function(resourcename, repo)
     local cleanrepo = repo:gsub("https://github.com/", "")
 
@@ -15,21 +28,22 @@ local checkFile = function(resourcename, repo)
             local uptodate = false
             local overdate = false
 
-            if current.version > latest.version then
+            local cmp = compareVersions(current.version, latest.version)
+            if cmp > 0 then
                 overdate = true
-            elseif current.version < latest.version then
+            elseif cmp < 0 then
                 uptodate = false
             else
                 uptodate = true
             end
 
             if uptodate then
-                print('^2✅Up to Date! ^5[' .. resourcename .. '] ^6(Current Version ' .. current.version .. ')^0')
+                print('^2✅ Up to Date! ^5[' .. resourcename .. '] ^6(Current Version ' .. current.version .. ')^0')
             elseif overdate then
-                print('^3⚠️Unsupported! ^5[' .. resourcename .. '] ^6(Version ' .. current.version .. ')^0')
+                print('^3⚠️ Unsupported! ^5[' .. resourcename .. '] ^6(Version ' .. current.version .. ')^0')
                 print('^4Current Version ^2(' .. latest.version .. ') ^3<' .. latest.url .. '>^0')
             else
-                print('^1❌Outdated! ^5[' .. resourcename .. '] ^6(Version ' .. current.version .. ')^0')
+                print('^1❌ Outdated! ^5[' .. resourcename .. '] ^6(Version ' .. current.version .. ')^0')
                 print('^4NEW VERSION ^2(' .. latest.version .. ') ^3<' .. latest.url .. '>^0')
 
                 local cl = latest.body:gsub("<" .. current.version .. ">.*", "")

@@ -76,7 +76,7 @@ const selectOption = (option) => {
           value: option.value || "",
         })
         .catch((e) => {
-          console.log(e.message);
+          console.error(e.message);
         });
     }, 500);
   }

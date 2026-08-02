@@ -156,7 +156,7 @@ watch(output, () => {
           action: props.element.data.sound.action,
           soundset: props.element.data.sound.soundset
         }).catch(e => {
-          console.log(e.message)
+          console.error(e.message)
         });
       }
 
@@ -164,7 +164,7 @@ watch(output, () => {
         ...props.element,
         value: output
       }).catch(e => {
-        console.log(e.message)
+        console.error(e.message)
       });
     }, 250);
   }

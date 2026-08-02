@@ -2,7 +2,7 @@ FeatherMenu = {
     RegisteredMenus = {},
     RegisteredAlerts = {},
     MenuCount = 0,
-    ActiveMenu = nil,
+    activeMenu = nil,
     ActiveOptions = {}
 }
 
@@ -33,7 +33,10 @@ end)
 
 RegisterNUICallback('onKeyClicked', function(data, cb)
     if FeatherMenu.RegisteredMenus[data.menuID] then
-        FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks[data.key]()
+        local keyclicks = FeatherMenu.RegisteredMenus[data.menuID].config.keyclicks
+        if keyclicks and keyclicks[data.key] then
+            keyclicks[data.key]()
+        end
     end
 
     cb('ok')
@@ -86,7 +89,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
             config = config,
         }
 
-        if options == nill then
+        if options == nil then
             options = {}
         end
 
@@ -185,7 +188,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
         menuClass.PageCount = menuClass.PageCount + 1
 
         function pageClass:getElementClass(eid)
-            return pageClass.RegisteredElements(eid):getElementClass()
+            return pageClass.RegisteredElements[eid]:getElementClass()
         end
 
         function pageClass:UnRegister()
@@ -276,10 +279,6 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
                 if callback ~= nil then
                     callback(changeData, elemClass)
                 end
-            end
-
-            function elemClass:unRegister()
-                pageClass.RegisteredElements[elemID] = nil
             end
 
             function elemClass:UnRegister()
