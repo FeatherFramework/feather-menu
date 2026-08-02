@@ -22,7 +22,7 @@ A standalone NUI menu system for RedM (RedM/FiveM, `rdr3`). Menus are defined en
 ## Available Elements
 
 | Type | Description |
-|---|---|
+| --- | --- |
 | `header` | Draggable title bar |
 | `subheader` | Secondary heading |
 | `line` | Horizontal separator |
