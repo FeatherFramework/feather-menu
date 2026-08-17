@@ -1,0 +1,55 @@
+---@meta
+
+-- RDR3 namespace: ZONE -- generated from rdr3-nativedb-data, do not hand-edit.
+-- Regenerate via generate_natives.js if the source natives.json is updated.
+
+-- _GET_MAP_ZONE_AT_COORDS  (0x43AD8FC02B429D33)
+-- Returns name hash, see common:/data/levels/rdr3/mapzones.meta
+-- 
+-- type (-1 matches any type):
+-- class CMapZone
+-- {
+-- public:
+-- 	enum class Type
+-- 	{
+-- 		STATE,
+-- 		TOWN,
+-- 		LAKE,
+-- 		RIVER,
+-- 		OIL_SPILL,
+-- 		SWAMP,
+-- 		OCEAN,
+-- 		CREEK,
+-- 		POND,
+-- 		GLACIER,
+-- 		DISTRICT,
+-- 		TEXT_PRINTED,
+-- 		TEXT_WRITTEN
+-- 	};
+-- };
+-- 
+-- https://github.com/femga/rdr3_discoveries/tree/master/zones & https://alloc8or.re/rdr3/doc/enums/CMapZone__Type.txt
+-- min build: 1207
+---@param x number
+---@param y number
+---@param z number
+---@param type number
+---@return number
+function _GetMapZoneAtCoords(x, y, z, type) end
+
+-- _GET_WATER_MAP_ZONE_AT_COORDS  (0x5BA7A68A346A5A91)
+-- Returns the zone's name hash if its type matches one of the following:
+-- - LAKE
+-- - RIVER
+-- - OIL_SPILL
+-- - SWAMP
+-- - OCEAN
+-- - CREEK
+-- - POND
+-- - GLACIER
+-- min build: 1207
+---@param x number
+---@param y number
+---@param z number
+---@return number
+function _GetWaterMapZoneAtCoords(x, y, z) end
