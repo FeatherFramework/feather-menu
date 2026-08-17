@@ -1,0 +1,1484 @@
+---@meta
+
+-- RDR3 namespace: AUDIO -- generated from rdr3-nativedb-data, do not hand-edit.
+-- Regenerate via generate_natives.js if the source natives.json is updated.
+
+-- _0x017492B2201E3428  (0x017492B2201E3428)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x017492B2201E3428(p0, p1, p2, p3) end
+
+-- _0x018ABE833CA64D2A  (0x018ABE833CA64D2A)
+-- min build: 1232
+---@param p0 any
+---@param p1 any
+function N_0x018ABE833CA64D2A(p0, p1) end
+
+-- _0x06C5DF5EE444BC6B  (0x06C5DF5EE444BC6B)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function N_0x06C5DF5EE444BC6B(p0, p1, p2, p3, p4) end
+
+-- _0x078F77FD1A43EAB3  (0x078F77FD1A43EAB3)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x078F77FD1A43EAB3(p0, p1) end
+
+-- _0x0CB3D1919E8D7CBA  (0x0CB3D1919E8D7CBA)
+-- min build: 1207
+---@param convoRoot string
+---@return boolean
+function N_0x0CB3D1919E8D7CBA(convoRoot) end
+
+-- _0x0D7FD6A55FD63AEF  (0x0D7FD6A55FD63AEF)
+-- speechEventType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/naSpeechEventType 
+-- p1 is possibly naSpeechAudibility, naSpeechType, or naSpeechEventTypeRequestPriority
+-- SKIP_* - START_*
+-- min build: 1207
+---@param speechEventType number
+---@param p1 number
+---@param p2 boolean
+function N_0x0D7FD6A55FD63AEF(speechEventType, p1, p2) end
+
+-- _0x0FAF7171BF613B80  (0x0FAF7171BF613B80)
+-- min build: 1207
+---@param p0 any
+function N_0x0FAF7171BF613B80(p0) end
+
+-- _0x131EC9247E7A2903  (0x131EC9247E7A2903)
+-- min build: 1207
+---@param p0 any
+---@return any
+function N_0x131EC9247E7A2903(p0) end
+
+-- _0x138ADB94F8B90616  (0x138ADB94F8B90616)
+-- min build: 1207
+function N_0x138ADB94F8B90616() end
+
+-- _0x139A4B9DF2D26CBF  (0x139A4B9DF2D26CBF)
+-- min build: 1232
+---@param p0 any
+---@param p1 any
+function N_0x139A4B9DF2D26CBF(p0, p1) end
+
+-- _0x152ED1B56E8F1F50  (0x152ED1B56E8F1F50)
+-- min build: 1207
+---@param p0 string
+---@param currentScriptedConvoLine number
+---@return number
+function N_0x152ED1B56E8F1F50(p0, currentScriptedConvoLine) end
+
+-- _0x1E6F9A9FE1A99F36  (0x1E6F9A9FE1A99F36)
+-- min build: 1207
+---@param audSpeechEvent string
+function N_0x1E6F9A9FE1A99F36(audSpeechEvent) end
+
+-- _0x254B0241E964B450  (0x254B0241E964B450)
+-- min build: 1207
+---@param p0 string
+---@param currentScriptedConvoLine number
+---@return number
+function N_0x254B0241E964B450(p0, currentScriptedConvoLine) end
+
+-- _0x259ACC5B52A2B2D9  (0x259ACC5B52A2B2D9)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x259ACC5B52A2B2D9(p0, p1) end
+
+-- _0x2651DDC0EA269073  (0x2651DDC0EA269073)
+-- min build: 1207
+---@param ropeId number
+---@param p1 number
+function N_0x2651DDC0EA269073(ropeId, p1) end
+
+-- _0x295859EB18F48D82  (0x295859EB18F48D82)
+-- min build: 1207
+---@param p0 string
+---@return number
+function N_0x295859EB18F48D82(p0) end
+
+-- _0x2B101AD9F651243A  (0x2B101AD9F651243A)
+-- min build: 1207
+---@return any
+function N_0x2B101AD9F651243A() end
+
+-- _0x2B9C37C01BF25EDB  (0x2B9C37C01BF25EDB)
+-- min build: 1207
+---@param p0 any
+---@return any
+function N_0x2B9C37C01BF25EDB(p0) end
+
+-- _0x2FFF4A78384AFFDF  (0x2FFF4A78384AFFDF)
+-- min build: 1436
+---@param entity number
+---@return any
+function N_0x2FFF4A78384AFFDF(entity) end
+
+-- _0x341CDD17EFC2472E  (0x341CDD17EFC2472E)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x341CDD17EFC2472E(p0, p1) end
+
+-- _0x35B8C070E0C16E2F  (0x35B8C070E0C16E2F)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x35B8C070E0C16E2F(p0, p1) end
+
+-- _0x380A2E353AD30917  (0x380A2E353AD30917)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x380A2E353AD30917(p0, p1, p2) end
+
+-- _0x3A00D87B20A2A5E4  (0x3A00D87B20A2A5E4)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x3A00D87B20A2A5E4(p0, p1) end
+
+-- _0x3A3BE6B920525237  (0x3A3BE6B920525237)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x3A3BE6B920525237(p0, p1) end
+
+-- _0x3D0BBCCF401B5FDB  (0x3D0BBCCF401B5FDB)
+-- min build: 1207
+function N_0x3D0BBCCF401B5FDB() end
+
+-- _0x3E93DDDCBB6111E4  (0x3E93DDDCBB6111E4)
+-- min build: 1207
+---@param p0 string
+---@param p1 number
+function N_0x3E93DDDCBB6111E4(p0, p1) end
+
+-- _0x3E98AC9D8C56C62C  (0x3E98AC9D8C56C62C)
+-- min build: 1207
+---@param p0 any
+function N_0x3E98AC9D8C56C62C(p0) end
+
+-- _0x40CA665AB9D8D505  (0x40CA665AB9D8D505)
+-- min build: 1207
+---@param convoRoot string
+---@param singleLineIndex number
+function N_0x40CA665AB9D8D505(convoRoot, singleLineIndex) end
+
+-- _0x43037ABFE214A851  (0x43037ABFE214A851)
+-- min build: 1207
+function N_0x43037ABFE214A851() end
+
+-- _0x448F2647DD6F2E27  (0x448F2647DD6F2E27)
+-- min build: 1232
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function N_0x448F2647DD6F2E27(p0, p1, p2, p3, p4) end
+
+-- _0x44A5EEF54F62E823  (0x44A5EEF54F62E823)
+-- min build: 1207
+---@param p0 any
+---@return any
+function N_0x44A5EEF54F62E823(p0) end
+
+-- _0x4A98E228A936DBCC  (0x4A98E228A936DBCC)
+-- Gets the hash for the currently playing speech line.
+-- min build: 1207
+---@param ped number
+---@return number
+function N_0x4A98E228A936DBCC(ped) end
+
+-- _0x4BE3EC91C01F0FE8  (0x4BE3EC91C01F0FE8)
+-- min build: 1207
+function N_0x4BE3EC91C01F0FE8() end
+
+-- _0x569ABC36E28DDEAA  (0x569ABC36E28DDEAA)
+-- min build: 1207
+function N_0x569ABC36E28DDEAA() end
+
+-- _0x580D71DFE0088E34  (0x580D71DFE0088E34)
+-- _IS_SOUND_RUNNING(?)
+-- min build: 1207
+---@param audioName string
+---@param audioRef string
+---@return boolean
+function N_0x580D71DFE0088E34(audioName, audioRef) end
+
+-- _0x5A13586A9447931F  (0x5A13586A9447931F)
+-- min build: 1207
+---@param p0 boolean
+---@return boolean
+function N_0x5A13586A9447931F(p0) end
+
+-- _0x5AE0CB5F35F034FD  (0x5AE0CB5F35F034FD)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+---@param p7 any
+function N_0x5AE0CB5F35F034FD(p0, p1, p2, p3, p4, p5, p6, p7) end
+
+-- _0x5BC885EBD75FAA7D  (0x5BC885EBD75FAA7D)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x5BC885EBD75FAA7D(p0, p1) end
+
+-- _0x5E3CCF03995388B5  (0x5E3CCF03995388B5)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x5E3CCF03995388B5(p0, p1, p2, p3) end
+
+-- _0x62377977E4F08668  (0x62377977E4F08668)
+-- min build: 1436
+---@param entity number
+---@return number
+function N_0x62377977E4F08668(entity) end
+
+-- _0x64B956F4E761DF5C  (0x64B956F4E761DF5C)
+-- min build: 1207
+---@param p0 any
+function N_0x64B956F4E761DF5C(p0) end
+
+-- _0x660A8F876DF1D4F8  (0x660A8F876DF1D4F8)
+-- speechEventType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/naSpeechEventType 
+-- SKIP_* - START_*
+-- min build: 1207
+---@param speechEventType number
+function N_0x660A8F876DF1D4F8(speechEventType) end
+
+-- _0x6652B0C8F3D414D0  (0x6652B0C8F3D414D0)
+-- min build: 1207
+---@param p0 any
+function N_0x6652B0C8F3D414D0(p0) end
+
+-- _0x6AB944DF68B512D3  (0x6AB944DF68B512D3)
+-- _STOP_AUDIO_*
+-- min build: 1207
+---@param p0 any
+function N_0x6AB944DF68B512D3(p0) end
+
+-- _0x6B7A88A61B41E589  (0x6B7A88A61B41E589)
+-- min build: 1207
+---@param p0 any
+function N_0x6B7A88A61B41E589(p0) end
+
+-- _0x6DA15746D5CC1A92  (0x6DA15746D5CC1A92)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+function N_0x6DA15746D5CC1A92(p0, p1, p2, p3, p4, p5) end
+
+-- _0x7455CD705F7E933E  (0x7455CD705F7E933E)
+-- _AUDIO_IS_* - _AUDIO_TRIGGER*
+-- min build: 1207
+function N_0x7455CD705F7E933E() end
+
+-- _0x7678FE0455ED1145  (0x7678FE0455ED1145)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x7678FE0455ED1145(p0, p1, p2) end
+
+-- _0x79F9C57B8D0DFE90  (0x79F9C57B8D0DFE90)
+-- Only used in R* SP Script cv_mus_shared
+-- min build: 1207
+---@param convoRoot string
+---@param animScene number
+---@return boolean
+function N_0x79F9C57B8D0DFE90(convoRoot, animScene) end
+
+-- _0x7E176C676F8652A9  (0x7E176C676F8652A9)
+-- min build: 1207
+---@param p0 any
+function N_0x7E176C676F8652A9(p0) end
+
+-- _0x821C32C728B24477  (0x821C32C728B24477)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x821C32C728B24477(p0, p1, p2) end
+
+-- _0x839C9F124BE74D94  (0x839C9F124BE74D94)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function N_0x839C9F124BE74D94(p0, p1, p2, p3, p4) end
+
+-- _0x847748AE5D7B1071  (0x847748AE5D7B1071)
+-- min build: 1207
+---@param p0 boolean
+---@return boolean
+function N_0x847748AE5D7B1071(p0) end
+
+-- _0x864A842B86993851  (0x864A842B86993851)
+-- Not implemented.
+-- min build: 1207
+---@param ped number
+function N_0x864A842B86993851(ped) end
+
+-- _0x886657C5B3D8EDE3  (0x886657C5B3D8EDE3)
+-- min build: 1232
+---@param entity number
+---@return any
+function N_0x886657C5B3D8EDE3(entity) end
+
+-- _0x8D29FDF565DED9AE  (0x8D29FDF565DED9AE)
+-- min build: 1232
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x8D29FDF565DED9AE(p0, p1, p2) end
+
+-- _0x8E901B65206C2D3E  (0x8E901B65206C2D3E)
+-- min build: 1207
+---@param ped number
+function N_0x8E901B65206C2D3E(ped) end
+
+-- _0x935DBD96D4A3DA1F  (0x935DBD96D4A3DA1F)
+-- min build: 1207
+---@param p0 string
+---@param currentScriptedConvoLine number
+---@return number
+function N_0x935DBD96D4A3DA1F(p0, currentScriptedConvoLine) end
+
+-- _0x9D6DEC9791A4E501  (0x9D6DEC9791A4E501)
+-- Returns true or false if the ped can say a specific speech line with PLAY_PED_AMBIENT_SPEECH_NATIVE, similar to DOES_CONTEXT_EXIST_FOR_THIS_PED.
+-- Not reliable on remote clients when used on a player ped.
+-- Params: p2 and p3 are usually false and true, respectively.
+-- min build: 1207
+---@param ped number
+---@param speechName string
+---@param p2 boolean
+---@param p3 boolean
+---@return boolean
+function N_0x9D6DEC9791A4E501(ped, speechName, p2, p3) end
+
+-- _0x9EB779765E68C52E  (0x9EB779765E68C52E)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0x9EB779765E68C52E(p0, p1) end
+
+-- _0xA2323A2EAE32A290  (0xA2323A2EAE32A290)
+-- min build: 1207
+---@param listeningToPed number
+---@param ped number
+---@param listenerName string
+function N_0xA2323A2EAE32A290(listeningToPed, ped, listenerName) end
+
+-- _0xA2B851605748AD0E  (0xA2B851605748AD0E)
+-- min build: 1207
+function N_0xA2B851605748AD0E() end
+
+-- _0xA6847BBA4FCDD13F  (0xA6847BBA4FCDD13F)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xA6847BBA4FCDD13F(p0, p1) end
+
+-- _0xA6A3A3F96B8B030E  (0xA6A3A3F96B8B030E)
+-- min build: 1207
+---@return any
+function N_0xA6A3A3F96B8B030E() end
+
+-- _0xABDB4863D3D72021  (0xABDB4863D3D72021)
+-- min build: 1207
+---@param entity number
+---@param p1 any
+---@param p2 any
+---@param p3 number
+---@param p4 any
+function N_0xABDB4863D3D72021(entity, p1, p2, p3, p4) end
+
+-- _0xB93A769B8B726950  (0xB93A769B8B726950)
+-- Used in Script Function NET_CAMP_CLIENT_UPDATE_PED_ROLE_STATE_SHOP: hash exists! Playing hash
+-- min build: 1207
+---@param ped number
+---@param p1 number
+function N_0xB93A769B8B726950(ped, p1) end
+
+-- _0xBC07CA8FD710E7FD  (0xBC07CA8FD710E7FD)
+-- min build: 1232
+---@param p0 any
+---@param p1 any
+function N_0xBC07CA8FD710E7FD(p0, p1) end
+
+-- _0xBE28DB99556FF8D9  (0xBE28DB99556FF8D9)
+-- Checks for MOONSHINE_BAND
+-- min build: 1207
+---@param entity number
+---@return number
+function N_0xBE28DB99556FF8D9(entity) end
+
+-- _0xC369E2234E34A0CA  (0xC369E2234E34A0CA)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0xC369E2234E34A0CA(p0, p1) end
+
+-- _0xC4CFCE4C656EF480  (0xC4CFCE4C656EF480)
+-- min build: 1207
+---@param ped number
+function N_0xC4CFCE4C656EF480(ped) end
+
+-- _0xC68C02DE259C927C  (0xC68C02DE259C927C)
+-- min build: 1232
+---@param p0 any
+---@return any
+function N_0xC68C02DE259C927C(p0) end
+
+-- _0xC886CD666ADD42E1  (0xC886CD666ADD42E1)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xC886CD666ADD42E1(p0, p1) end
+
+-- _0xCBF2BEBB468A34F3  (0xCBF2BEBB468A34F3)
+-- min build: 1207
+---@param p0 any
+function N_0xCBF2BEBB468A34F3(p0) end
+
+-- _0xCFAD2C8CD1054523  (0xCFAD2C8CD1054523)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0xCFAD2C8CD1054523(p0, p1, p2, p3) end
+
+-- _0xD05A460328560477  (0xD05A460328560477)
+-- min build: 1232
+---@param p0 any
+---@return any
+function N_0xD05A460328560477(p0) end
+
+-- _0xD0730C1FA40348D9  (0xD0730C1FA40348D9)
+-- _IS_SCRIPTED_CONVERSATION_*
+-- min build: 1207
+---@param convoRoot string
+---@return boolean
+function N_0xD0730C1FA40348D9(convoRoot) end
+
+-- _0xD47D47EFBF103FB8  (0xD47D47EFBF103FB8)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xD47D47EFBF103FB8(p0, p1) end
+
+-- _0xD733528B6C35647A  (0xD733528B6C35647A)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xD733528B6C35647A(p0, p1) end
+
+-- _0xDAD6CD07CAA4F382  (0xDAD6CD07CAA4F382)
+-- min build: 1207
+function N_0xDAD6CD07CAA4F382() end
+
+-- _0xDC2F83A0612CA34D  (0xDC2F83A0612CA34D)
+-- min build: 1207
+---@param p0 any
+---@return any
+function N_0xDC2F83A0612CA34D(p0) end
+
+-- _0xDC93F0948F2C28F4  (0xDC93F0948F2C28F4)
+-- min build: 1207
+---@param p0 any
+function N_0xDC93F0948F2C28F4(p0) end
+
+-- _0xDF947FE0D551684E  (0xDF947FE0D551684E)
+-- min build: 1207
+---@param ped number
+---@param p1 string
+---@return boolean
+function N_0xDF947FE0D551684E(ped, p1) end
+
+-- _0xE600F61F54A444A6  (0xE600F61F54A444A6)
+-- min build: 1207
+---@return any
+function N_0xE600F61F54A444A6() end
+
+-- _0xE7E6CB8B713ED190  (0xE7E6CB8B713ED190)
+-- min build: 1207
+function N_0xE7E6CB8B713ED190() end
+
+-- _0xE891504B2F0E2DBA  (0xE891504B2F0E2DBA)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xE891504B2F0E2DBA(p0, p1) end
+
+-- _0xE9694B2D6CB87B06  (0xE9694B2D6CB87B06)
+-- min build: 1232
+---@param entity number
+---@param p1 any
+function N_0xE9694B2D6CB87B06(entity, p1) end
+
+-- _0xEA546C31FD45F8CD  (0xEA546C31FD45F8CD)
+-- min build: 1207
+---@param p0 any
+function N_0xEA546C31FD45F8CD(p0) end
+
+-- _0xEB4D592620B8C209  (0xEB4D592620B8C209)
+-- min build: 1207
+---@param p0 any
+function N_0xEB4D592620B8C209(p0) end
+
+-- _0xF092B6030D6FD49C  (0xF092B6030D6FD49C)
+-- Name: ROPE_SETTINGS_DEFAULT
+-- min build: 1207
+---@param ropeId number
+---@param name string
+function N_0xF092B6030D6FD49C(ropeId, name) end
+
+-- _0xF0EE69F500952FA5  (0xF0EE69F500952FA5)
+-- min build: 1207
+---@param p0 any
+---@return any
+function N_0xF0EE69F500952FA5(p0) end
+
+-- _0xF232C2C546AC16D0  (0xF232C2C546AC16D0)
+-- min build: 1207
+---@param p0 string
+function N_0xF232C2C546AC16D0(p0) end
+
+-- _0xF336E9F989B3518F  (0xF336E9F989B3518F)
+-- min build: 1207
+---@param p0 string
+---@return number
+function N_0xF336E9F989B3518F(p0) end
+
+-- _0xF64034D533CE8AAC  (0xF64034D533CE8AAC)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xF64034D533CE8AAC(p0, p1, p2) end
+
+-- _0xFCDEC42B1C78B7F8  (0xFCDEC42B1C78B7F8)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xFCDEC42B1C78B7F8(p0, p1) end
+
+-- _0xFD461D0ABA5559B1  (0xFD461D0ABA5559B1)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+function N_0xFD461D0ABA5559B1(p0, p1) end
+
+-- _0xFE5C6177064BD390  (0xFE5C6177064BD390)
+-- min build: 1207
+---@param p0 boolean
+---@return boolean
+function N_0xFE5C6177064BD390(p0) end
+
+-- _0xFFE9C53DEEA3DB0B  (0xFFE9C53DEEA3DB0B)
+-- min build: 1207
+---@param p0 any
+---@param p1 any
+---@param x number
+---@param y number
+---@param z number
+---@param isSrlLoaded boolean
+---@param p6 any
+---@return any
+function N_0xFFE9C53DEEA3DB0B(p0, p1, x, y, z, isSrlLoaded, p6) end
+
+-- _BLOCK_SPEECH_CONTEXT  (0x6378A235374B852F)
+-- min build: 1207
+---@param context string
+---@param block boolean
+function _BlockSpeechContext(context, block) end
+
+-- _CLEAR_CONVERSATION_HISTORY_FOR_SCRIPTED_CONVERSATION  (0xEF51242E35242B47)
+-- min build: 1207
+---@param convoRoot string
+function _ClearConversationHistoryForScriptedConversation(convoRoot) end
+
+-- _CREATE_NEW_SCRIPTED_PED_AMBIENT_SPEECH  (0x72E4D1C4639BC465)
+-- Create a scripted speech to control speech. If handle is less than 0, it's invalid.
+-- params struct for ScriptedSpeechParams see: PLAY_PED_AMBIENT_SPEECH_NATIVE
+-- Returns scriptedSpeech handle.
+-- min build: 1207
+---@param speaker number
+---@return number
+---@return any
+function _CreateNewScriptedPedAmbientSpeech(speaker) end
+
+-- _GET_ENTITY_AUDIO_MIX_GROUP  (0x8B25A18E390F75BF)
+-- min build: 1207
+---@param entity number
+---@return number
+function _GetEntityAudioMixGroup(entity) end
+
+-- _GET_LAST_PLAYED_SPEECH_FOR_PED  (0x6BFFB7C276866996)
+-- Gets the hash for the last played speech line.
+-- min build: 1207
+---@param ped number
+---@return number
+function _GetLastPlayedSpeechForPed(ped) end
+
+-- _GET_LOADED_STREAM_ID_FROM_CREATION  (0x0556C784FA056628)
+-- Creates stream and returns streamId handle to be used with PLAY_STREAM_* natives
+-- https://github.com/femga/rdr3_discoveries/tree/master/audio/create_stream
+-- min build: 1207
+---@param streamName string
+---@param soundSet string
+---@return number
+function _GetLoadedStreamIdFromCreation(streamName, soundSet) end
+
+-- _GET_PED_SONG_INDEX_HOST  (0x2DBBF0C5E19383EE)
+-- min build: 1232
+---@param ped number
+---@return any
+function _GetPedSongIndexHost(ped) end
+
+-- _HAS_SOUND_AUDIO_NAME_FINISHED  (0x714A0EA7DE1167BE)
+-- min build: 1207
+---@param audioName string
+---@param soundsetName string
+---@return boolean
+function _HasSoundAudioNameFinished(audioName, soundsetName) end
+
+-- _HAS_SOUND_ID_FINISHED  (0x84848E1C0FC67DBB)
+-- min build: 1207
+---@param soundId number
+---@return boolean
+function _HasSoundIdFinished(soundId) end
+
+-- _IS_ANY_CONVERSATION_PLAYING  (0xA2CAC9DEF0195E6F)
+-- min build: 1207
+---@param p0 boolean
+---@return boolean
+function _IsAnyConversationPlaying(p0) end
+
+-- _IS_PED_IN_ANY_CONVERSATION  (0x54B187F111D9C6F8)
+-- min build: 1207
+---@param ped number
+---@param p1 boolean
+---@return boolean
+function _IsPedInAnyConversation(ped, p1) end
+
+-- _IS_SCRIPTED_AUDIO_CUSTOM  (0x6DF942C4179BE5AB)
+-- item: FUSE, value returned from 0x2E1CDC1FF3B8473E
+-- soundSet: HUD_SHOP_SOUNDSET, COMPANIONS_ROBBERIES_SOUNDSET
+-- min build: 1207
+---@param item number
+---@param soundSet number
+---@return boolean
+function _IsScriptedAudioCustom(item, soundSet) end
+
+-- _IS_SCRIPTED_CONVERSATION_CREATED  (0xD89504D9D7D5057D)
+-- min build: 1207
+---@param convoRoot string
+---@return boolean
+function _IsScriptedConversationCreated(convoRoot) end
+
+-- _IS_SCRIPTED_CONVERSION_ONGOING  (0xF01C570E0A0A1E67)
+-- min build: 1207
+---@param p0 string
+---@return boolean
+function _IsScriptedConversionOngoing(p0) end
+
+-- _PLAY_ANIMAL_VOCALIZATION_PHEROMONE_VIAL_RESPONSE  (0x0E53530D9B2DB01D)
+-- min build: 1311
+---@param ped number
+---@param p1 number
+---@param p2 boolean
+function _PlayAnimalVocalizationPheromoneVialResponse(ped, p1, p2) end
+
+-- _PLAY_SOUND_FROM_ENTITY_WITH_SET  (0xF1C5310FEAA36B48)
+-- Params: p5 seems to be always 0
+-- min build: 1207
+---@param soundId number
+---@param soundName string
+---@param entity number
+---@param soundsetName string
+---@param p4 boolean
+---@param p5 any
+function _PlaySoundFromEntityWithSet(soundId, soundName, entity, soundsetName, p4, p5) end
+
+-- _PLAY_SOUND_FROM_ITEM  (0xE8EAFF7B41EDD291)
+-- item: value returned from 0x2E1CDC1FF3B8473E
+-- soundSet: HUD_SHOP_SOUNDSET, COMPANIONS_ROBBERIES_SOUNDSET
+-- min build: 1207
+---@param item number
+---@param soundSet number
+---@param p2 any
+function _PlaySoundFromItem(item, soundSet, p2) end
+
+-- _PLAY_SOUND_FROM_POSITION  (0xCCE219C922737BFA)
+-- min build: 1207
+---@param audioName string
+---@param x number
+---@param y number
+---@param z number
+---@param audioRef string
+---@param isNetwork boolean
+---@param p6 any
+---@param p7 boolean
+---@param p8 any
+function _PlaySoundFromPosition(audioName, x, y, z, audioRef, isNetwork, p6, p7, p8) end
+
+-- _PLAY_SOUND_FROM_POSITION_WITH_ID  (0xDCF5BA95BBF0FABA)
+-- Starts Audio Loop
+-- _PLAY_SOUND_FROM_ENTITY* - _PLAY_SOUND_FRONTEND*
+-- min build: 1207
+---@param soundId number
+---@param soundName string
+---@param x number
+---@param y number
+---@param z number
+---@param soundsetName string
+---@param p6 boolean
+---@param p7 number
+---@param p8 boolean
+function _PlaySoundFromPositionWithId(soundId, soundName, x, y, z, soundsetName, p6, p7, p8) end
+
+-- _PLAY_SOUND_FROM_SCRIPTED_PED_AMBIENT_SPEECH  (0xB18FEC133C7C6C69)
+-- Play/advance a scripted speech created via _CREATE_NEW_SCRIPTED_PED_AMBIENT_SPEECH and return a status code.
+-- Return values:
+--   0 = not ready/invalid/failed
+--   1 = started/playing
+--   2 = finished/consumed (you can drop the handle)
+-- Typical usage: poll this in a tick after creating the speech; when it returns 2, clear your handle.
+-- min build: 1207
+---@param scriptedSpeech number
+---@return number
+function _PlaySoundFromScriptedPedAmbientSpeech(scriptedSpeech) end
+
+-- _PLAY_SOUND_FRONTEND_WITH_SOUND_ID  (0xCE5D0FFE83939AF1)
+-- min build: 1207
+---@param soundId number
+---@param name string
+---@param soundSet string
+---@param p3 boolean
+function _PlaySoundFrontendWithSoundId(soundId, name, soundSet, p3) end
+
+-- _RELEASE_SHARD_SOUNDS  (0x9D746964E0CF2C5F)
+-- min build: 1207
+---@param soundName string
+---@param soundsetName string
+function _ReleaseShardSounds(soundName, soundsetName) end
+
+-- _RELEASE_SOUNDSET  (0x531A78D6BF27014B)
+-- min build: 1207
+---@param soundsetName string
+function _ReleaseSoundset(soundsetName) end
+
+-- _SET_AMBIENT_ZONE_POSITION  (0x3743CE6948194349)
+-- min build: 1207
+---@param ambientZone string
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+function _SetAmbientZonePosition(ambientZone, x, y, z, heading) end
+
+-- _SET_AUDIO_SCENESET  (0xAC84686C06184B0D)
+-- min build: 1207
+---@param audioName string
+---@param sceneset string
+---@return boolean
+function _SetAudioSceneset(audioName, sceneset) end
+
+-- _SET_SOUND_RELATIONSHIP_ON_PED  (0x2E31ACA7477CF00F)
+-- p1: Entity.Relationship
+-- p2: Player, Enemy, Teammate, Neutral
+-- min build: 1207
+---@param ped number
+---@param p1 string
+---@param p2 string
+function _SetSoundRelationshipOnPed(ped, p1, p2) end
+
+-- _SET_VARIABLE_ON_SOUND_WITH_ID  (0x503703EC1781B7D6)
+-- min build: 1207
+---@param soundId number
+---@param variableName string
+---@param variableValue number
+function _SetVariableOnSoundWithId(soundId, variableName, variableValue) end
+
+-- _SET_VARIABLE_ON_SOUND_WITH_NAME  (0x9821B68CD3E05F2B)
+-- min build: 1207
+---@param variableName string
+---@param variableValue number
+---@param audioName string
+---@param audioRef string
+function _SetVariableOnSoundWithName(variableName, variableValue, audioName, audioRef) end
+
+-- _SET_VOFX_PED_VOICE  (0x2703EFB583F0949A)
+-- Hashes: VOFX_PLAYER_MALE01, VOFX_PLAYER_MALE02, VOFX_PLAYER_MALE03, VOFX_PLAYER_FEMALE01, VOFX_PLAYER_FEMALE02, VOFX_PLAYER_FEMALE03
+-- min build: 1207
+---@param ped number
+---@param voice number
+function _SetVofxPedVoice(ped, voice) end
+
+-- _SET_WHISTLE_CONFIG_FOR_PED  (0x9963681A8BC69BF3)
+-- whistleConfig: Ped.WhistlePitch (0.0 - 1.0), Ped.WhistleClarity (0.0 - 1.0), Ped.WhistleShape (0.0 - 10.0)
+-- min build: 1207
+---@param ped number
+---@param whistleConfig string
+---@param value number
+function _SetWhistleConfigForPed(ped, whistleConfig, value) end
+
+-- _START_AUDIO_SCENESET  (0x6339C1EA3979B5F7)
+-- min build: 1207
+---@param audioName string
+---@param sceneset string
+---@return boolean
+function _StartAudioSceneset(audioName, sceneset) end
+
+-- _STOP_ALL_SCRIPTED_AUDIO_SOUNDS  (0x2E399EAFBEEA74D5)
+-- min build: 1207
+function _StopAllScriptedAudioSounds() end
+
+-- _STOP_ALL_SCRIPTED_CONVERSIONS  (0x36559148B78853B3)
+-- min build: 1207
+---@param p0 boolean
+---@param p1 boolean
+---@param p2 boolean
+function _StopAllScriptedConversions(p0, p1, p2) end
+
+-- _STOP_AUDIO_SCENESET  (0x9428447DED71FC7E)
+-- min build: 1207
+---@param sceneset string
+function _StopAudioSceneset(sceneset) end
+
+-- _STOP_SOUND_WITH_ID  (0x3210BCB36AF7621B)
+-- min build: 1207
+---@param soundId number
+function _StopSoundWithId(soundId) end
+
+-- _STOP_SOUND_WITH_NAME  (0x0F2A2175734926D8)
+-- min build: 1207
+---@param audioName string
+---@param audioRef string
+function _StopSoundWithName(audioName, audioRef) end
+
+-- _TRIGGER_MUSIC_EVENT_WITH_HASH  (0x05D6195FB4D428F4)
+-- min build: 1207
+---@param eventName number
+---@return any
+function _TriggerMusicEventWithHash(eventName) end
+
+-- _UNLOAD_SPEECH_CONTEXT  (0x87E6302FC61208CC)
+-- _UNLOAD_[A-C]* - USE_*
+-- min build: 1207
+---@param speechContext string
+function _UnloadSpeechContext(speechContext) end
+
+-- _UPDATE_SOUND_POSITION  (0x0286617C8FC50A53)
+-- Only used in R* SP Scripts
+-- min build: 1207
+---@param soundId number
+---@param x number
+---@param y number
+---@param z number
+function _UpdateSoundPosition(soundId, x, y, z) end
+
+-- ADD_ENTITY_TO_AUDIO_MIX_GROUP  (0x153973AB99FE8980)
+-- min build: 1207
+---@param entity number
+---@param groupName string
+---@param p2 number
+function AddEntityToAudioMixGroup(entity, groupName, p2) end
+
+-- ADD_PED_TO_CONVERSATION  (0x95D9F4BC443956E7)
+-- min build: 1207
+---@param convoRoot string
+---@param ped number
+---@param characterName string
+function AddPedToConversation(convoRoot, ped, characterName) end
+
+-- AUDIO_IS_MUSIC_PLAYING  (0x845FFC3A4FEEFA3E)
+-- Old name: AUDIO_IS_SCRIPTED_MUSIC_PLAYING
+-- min build: 1207
+---@return boolean
+function AudioIsMusicPlaying() end
+
+-- AUDIO_TRIGGER_EXPLOSION  (0x374F0E716BFCDE82)
+-- min build: 1207
+---@param name string
+---@param x number
+---@param y number
+---@param z number
+function AudioTriggerExplosion(name, x, y, z) end
+
+-- CANCEL_MUSIC_EVENT  (0x5B17A90291133DA5)
+-- min build: 1207
+---@param eventName string
+---@return boolean
+function CancelMusicEvent(eventName) end
+
+-- CLEAR_AMBIENT_ZONE_LIST_STATE  (0x120C48C614909FA4)
+-- min build: 1207
+---@param ambientZone string
+---@param p1 boolean
+function ClearAmbientZoneListState(ambientZone, p1) end
+
+-- CLEAR_AMBIENT_ZONE_STATE  (0x218DD44AAAC964FF)
+-- min build: 1207
+---@param zoneName string
+---@param p1 boolean
+function ClearAmbientZoneState(zoneName, p1) end
+
+-- CLEAR_CONVERSATION_HISTORY  (0x33D51F801CB16E4F)
+-- min build: 1207
+function ClearConversationHistory() end
+
+-- CREATE_NEW_SCRIPTED_CONVERSATION  (0xD2C91A0B572AAE56)
+-- min build: 1207
+---@param convoRoot string
+---@return boolean
+function CreateNewScriptedConversation(convoRoot) end
+
+-- DISABLE_PED_PAIN_AUDIO  (0xA9A41C1E940FB0E8)
+-- min build: 1207
+---@param ped number
+---@param toggle boolean
+function DisablePedPainAudio(ped, toggle) end
+
+-- DOES_CONTEXT_EXIST_FOR_THIS_PED  (0x49B99BF3FDA89A7A)
+-- Checks if the ped can play the speech or has the speech file, last parameter is usually false.
+-- min build: 1207
+---@param ped number
+---@param speechName string
+---@param unk boolean
+---@return boolean
+function DoesContextExistForThisPed(ped, speechName, unk) end
+
+-- FORCE_PED_PANIC_WALLA  (0x062D5EAD4DA2FA6A)
+-- min build: 1207
+function ForcePedPanicWalla() end
+
+-- FORCE_USE_AUDIO_GAME_OBJECT  (0x4F0C413926060B38)
+-- Old name: _FORCE_VEHICLE_ENGINE_AUDIO
+-- min build: 1207
+---@param vehicle number
+---@param audioName string
+function ForceUseAudioGameObject(vehicle, audioName) end
+
+-- GET_CURRENT_SCRIPTED_CONVERSATION_LINE  (0x480357EE890C295A)
+-- min build: 1207
+---@param p0 string
+---@return number
+function GetCurrentScriptedConversationLine(p0) end
+
+-- GET_MUSIC_PLAYTIME  (0xE7A0D23DC414507B)
+-- min build: 1207
+---@return number
+function GetMusicPlaytime() end
+
+-- GET_SOUND_ID  (0x430386FE9BF80B45)
+-- min build: 1207
+---@return number
+function GetSoundId() end
+
+-- IS_AMBIENT_SPEECH_DISABLED  (0x932C2D096A2C3FFF)
+-- min build: 1207
+---@param ped number
+---@return boolean
+function IsAmbientSpeechDisabled(ped) end
+
+-- IS_AMBIENT_SPEECH_PLAYING  (0x9072C8B49907BFAD)
+-- min build: 1207
+---@param ped number
+---@return boolean
+function IsAmbientSpeechPlaying(ped) end
+
+-- IS_ANIMAL_VOCALIZATION_PLAYING  (0xC265DF9FB44A9FBD)
+-- min build: 1207
+---@param pedHandle number
+---@return boolean
+function IsAnimalVocalizationPlaying(pedHandle) end
+
+-- IS_ANY_SPEECH_PLAYING  (0x729072355FA39EC9)
+-- min build: 1207
+---@param ped number
+---@return boolean
+function IsAnySpeechPlaying(ped) end
+
+-- IS_AUDIO_SCENE_ACTIVE  (0xB65B60556E2A9225)
+-- min build: 1207
+---@param scene string
+---@return boolean
+function IsAudioSceneActive(scene) end
+
+-- IS_HORN_ACTIVE  (0x9D6BFC12B05C6121)
+-- Checks whether the horn of a vehicle is currently played.
+-- min build: 1207
+---@param vehicle number
+---@return boolean
+function IsHornActive(vehicle) end
+
+-- IS_PED_IN_CURRENT_CONVERSATION  (0x049E937F18F4020C)
+-- min build: 1207
+---@param p0 string
+---@param ped number
+---@param p2 any
+---@return boolean
+function IsPedInCurrentConversation(p0, ped, p2) end
+
+-- IS_SCRIPTED_CONVERSATION_LOADED  (0xDF0D54BE7A776737)
+-- min build: 1207
+---@param convoRoot string
+---@return boolean
+function IsScriptedConversationLoaded(convoRoot) end
+
+-- IS_SCRIPTED_CONVERSATION_PLAYING  (0x1ECC76792F661CF5)
+-- min build: 1207
+---@param p0 string
+---@return boolean
+function IsScriptedConversationPlaying(p0) end
+
+-- IS_SCRIPTED_SPEECH_PLAYING  (0xCC9AA18DCC7084F4)
+-- min build: 1207
+---@param p0 any
+---@return boolean
+function IsScriptedSpeechPlaying(p0) end
+
+-- IS_STREAM_PLAYING  (0xD11FA52EB849D978)
+-- min build: 1207
+---@param streamId number
+---@return boolean
+function IsStreamPlaying(streamId) end
+
+-- LOAD_STREAM  (0x1F1F957154EC51DF)
+-- min build: 1207
+---@param streamName string
+---@param soundSet string
+---@return boolean
+function LoadStream(streamName, soundSet) end
+
+-- PAUSE_SCRIPTED_CONVERSATION  (0x8530AD776CD72B12)
+-- min build: 1207
+---@param p0 string
+---@param p1 boolean
+---@param p2 boolean
+---@param p3 boolean
+---@param p4 boolean
+function PauseScriptedConversation(p0, p1, p2, p3, p4) end
+
+-- PLAY_AMBIENT_SPEECH_FROM_POSITION_NATIVE  (0xED640017ED337E45)
+-- Play a speech from a position.
+-- params struct for ScriptedSpeechParams see: PLAY_PED_AMBIENT_SPEECH_NATIVE
+-- min build: 1207
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+---@return any
+function PlayAmbientSpeechFromPositionNative(x, y, z) end
+
+-- PLAY_ANIMAL_VOCALIZATION  (0xEE066C7006C49C0A)
+-- min build: 1207
+---@param ped number
+---@param vocalizationName string
+---@param p2 boolean
+function PlayAnimalVocalization(ped, vocalizationName, p2) end
+
+-- PLAY_END_CREDITS_MUSIC  (0xCD536C4D33DCC900)
+-- min build: 1207
+---@param play boolean
+function PlayEndCreditsMusic(play) end
+
+-- PLAY_PAIN  (0xBC9AE166038A5CEC)
+-- Valid pain IDs: 0..12
+-- min build: 1207
+---@param ped number
+---@param painId number
+---@param p2 number
+---@param p3 boolean
+---@param isNetwork boolean
+function PlayPain(ped, painId, p2, p3, isNetwork) end
+
+-- PLAY_PED_AMBIENT_SPEECH_NATIVE  (0x8E04FEDD28D42462)
+-- struct ScriptedSpeechParams
+-- {
+-- 	const char* speechName;
+-- 	const char* voiceName;
+-- 	alignas(8) int variation;
+-- 	alignas(8) Hash speechParamHash;
+-- 	alignas(8) Ped listenerPed;
+-- 	alignas(8) BOOL syncOverNetwork;
+-- 	alignas(8) int v7;
+-- 	alignas(8) int v8;
+-- };
+-- 
+-- static_assert(sizeof(ScriptedSpeechParams) == 0x40, "incorrect ScriptedSpeechParams size");
+-- 
+-- 
+-- Example:
+-- 
+-- ScriptedSpeechParams params{"RE_PH_RHD_V3_AGGRO", "0405_U_M_M_RhdSheriff_01", 1, joaat("SPEECH_PARAMS_BEAT_SHOUTED_CLEAR"), 0, true, 1, 1};
+-- PLAY_PED_AMBIENT_SPEECH_NATIVE(PLAYER_PED_ID(), (Any*)&params);
+-- 
+-- Old name: _PLAY_AMBIENT_SPEECH1
+-- https://github.com/femga/rdr3_discoveries/tree/master/audio/audio_banks
+-- min build: 1207
+---@param speaker number
+---@return boolean
+---@return any
+function PlayPedAmbientSpeechNative(speaker) end
+
+-- PLAY_SOUND  (0x7FF4944CC209192D)
+-- min build: 1207
+---@param audioName string
+---@param audioRef string
+---@param p2 boolean
+---@param p3 any
+---@param p4 boolean
+---@param p5 any
+function PlaySound(audioName, audioRef, p2, p3, p4, p5) end
+
+-- PLAY_SOUND_FROM_ENTITY  (0x6FB1DA3CA9DA7D90)
+-- min build: 1207
+---@param audioName string
+---@param entity number
+---@param audioRef string
+---@param isNetwork boolean
+---@param p4 any
+---@param p5 any
+function PlaySoundFromEntity(audioName, entity, audioRef, isNetwork, p4, p5) end
+
+-- PLAY_SOUND_FRONTEND  (0x67C540AA08E4A6F5)
+-- https://github.com/femga/rdr3_discoveries/tree/master/audio/frontend_soundsets
+-- min build: 1207
+---@param audioName string
+---@param audioRef string
+---@param p2 boolean
+---@param p3 any
+function PlaySoundFrontend(audioName, audioRef, p2, p3) end
+
+-- PLAY_STREAM_FROM_PED  (0x89049DD63C08B5D1)
+-- min build: 1207
+---@param ped number
+---@param streamId number
+function PlayStreamFromPed(ped, streamId) end
+
+-- PLAY_STREAM_FROM_POSITION  (0x21442F412E8DE56B)
+-- min build: 1207
+---@param x number
+---@param y number
+---@param z number
+---@param streamId number
+function PlayStreamFromPosition(x, y, z, streamId) end
+
+-- PLAY_STREAM_FRONTEND  (0x58FCE43488F9F5F4)
+-- min build: 1207
+---@param streamId number
+function PlayStreamFrontend(streamId) end
+
+-- PRELOAD_SCRIPT_CONVERSATION  (0x3B3CAD6166916D87)
+-- min build: 1207
+---@param convoRoot string
+---@param p1 boolean
+---@param p2 boolean
+---@param clone boolean
+function PreloadScriptConversation(convoRoot, p1, p2, clone) end
+
+-- PREPARE_MUSIC_EVENT  (0x1E5185B72EF5158A)
+-- min build: 1207
+---@param eventName string
+---@return boolean
+function PrepareMusicEvent(eventName) end
+
+-- PREPARE_SOUND  (0xE368E8422C860BA7)
+-- min build: 1207
+---@param soundName string
+---@param soundsetName string
+---@param soundId number
+---@return boolean
+function PrepareSound(soundName, soundsetName, soundId) end
+
+-- PREPARE_SOUND_WITH_ENTITY  (0x4AD019591E94C064)
+-- min build: 1207
+---@param soundName string
+---@param entity number
+---@param soundsetName string
+---@param soundId number
+---@return boolean
+function PrepareSoundWithEntity(soundName, entity, soundsetName, soundId) end
+
+-- PREPARE_SOUNDSET  (0xD9130842D7226045)
+-- https://github.com/femga/rdr3_discoveries/tree/master/audio/soundsets
+-- min build: 1207
+---@param soundsetName string
+---@param p1 boolean
+---@return boolean
+function PrepareSoundset(soundsetName, p1) end
+
+-- REGISTER_SCRIPT_WITH_AUDIO  (0xC6ED9D5092438D91)
+-- nullsub, doesn't do anything
+-- min build: 1207
+---@param p0 boolean
+function RegisterScriptWithAudio(p0) end
+
+-- RELEASE_NAMED_SCRIPT_AUDIO_BANK  (0x77ED170667F50170)
+-- min build: 1207
+---@param audioBank string
+function ReleaseNamedScriptAudioBank(audioBank) end
+
+-- RELEASE_SCRIPT_AUDIO_BANK  (0x7A2D8AD0A9EB9C3F)
+-- min build: 1207
+function ReleaseScriptAudioBank() end
+
+-- RELEASE_SOUND_ID  (0x353FC880830B88FA)
+-- min build: 1207
+---@param soundId number
+function ReleaseSoundId(soundId) end
+
+-- REMOVE_ENTITY_FROM_AUDIO_MIX_GROUP  (0x18EB48CFC41F2EA0)
+-- min build: 1207
+---@param entity number
+---@param p1 number
+function RemoveEntityFromAudioMixGroup(entity, p1) end
+
+-- REMOVE_PORTAL_SETTINGS_OVERRIDE  (0xB4BBFD9CD8B3922B)
+-- min build: 1207
+---@param p0 string
+function RemovePortalSettingsOverride(p0) end
+
+-- REQUEST_SCRIPT_AUDIO_BANK  (0x2F844A8B08D76685)
+-- min build: 1207
+---@param audioBank string
+---@return boolean
+function RequestScriptAudioBank(audioBank) end
+
+-- RESTART_SCRIPTED_CONVERSATION  (0x9AEB285D1818C9AC)
+-- min build: 1207
+---@param p0 string
+function RestartScriptedConversation(p0) end
+
+-- SET_AMBIENT_VOICE_NAME  (0x6C8065A3B780185B)
+-- min build: 1207
+---@param ped number
+---@param name string
+function SetAmbientVoiceName(ped, name) end
+
+-- SET_AMBIENT_ZONE_LIST_STATE  (0x9748FA4DE50CCE3E)
+-- min build: 1207
+---@param ambientZone string
+---@param p1 boolean
+---@param p2 boolean
+function SetAmbientZoneListState(ambientZone, p1, p2) end
+
+-- SET_AMBIENT_ZONE_LIST_STATE_PERSISTENT  (0xF3638DAE8C4045E1)
+-- min build: 1207
+---@param ambientZone string
+---@param p1 boolean
+---@param p2 boolean
+function SetAmbientZoneListStatePersistent(ambientZone, p1, p2) end
+
+-- SET_AMBIENT_ZONE_STATE  (0xBDA07E5950085E46)
+-- min build: 1207
+---@param zoneName string
+---@param isEnabled boolean
+---@param p2 boolean
+function SetAmbientZoneState(zoneName, isEnabled, p2) end
+
+-- SET_AMBIENT_ZONE_STATE_PERSISTENT  (0x1D6650420CEC9D3B)
+-- min build: 1207
+---@param ambientZone string
+---@param p1 boolean
+---@param p2 boolean
+function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
+
+-- SET_ANIMAL_MOOD  (0xCC97B29285B1DC3B)
+-- Not implemented.
+-- min build: 1207
+---@param animal number
+---@param mood number
+function SetAnimalMood(animal, mood) end
+
+-- SET_AUDIO_FLAG  (0xB9EFD5C25018725A)
+-- Audio flags can be found here: https://pastebin.com/40qPV6EJ
+-- https://github.com/femga/rdr3_discoveries/tree/master/audio/audio_flags
+-- min build: 1207
+---@param flagName string
+---@param toggle boolean
+function SetAudioFlag(flagName, toggle) end
+
+-- SET_AUDIO_ONLINE_TRANSITION_STAGE  (0x9B1FC259187C97C0)
+-- min build: 1207
+---@param p0 string
+function SetAudioOnlineTransitionStage(p0) end
+
+-- SET_AUDIO_SCENE_VARIABLE  (0xEF21A9EF089A2668)
+-- min build: 1207
+---@param scene string
+---@param variable string
+---@param value number
+function SetAudioSceneVariable(scene, variable, value) end
+
+-- SET_AUDIO_VEHICLE_PRIORITY  (0xE5564483E407F914)
+-- min build: 1207
+---@param vehicle number
+---@param p1 any
+function SetAudioVehiclePriority(vehicle, p1) end
+
+-- SET_GPS_ACTIVE  (0x3BD3F52BA9B1E4E8)
+-- nullsub, doesn't do anything
+-- min build: 1207
+---@param active boolean
+function SetGpsActive(active) end
+
+-- SET_HORN_ENABLED  (0x76D683C108594D0E)
+-- min build: 1207
+---@param vehicle number
+---@param toggle boolean
+function SetHornEnabled(vehicle, toggle) end
+
+-- SET_IS_SCRIPTED_SPEECH_DISABLED  (0xB2DE3AEBE31150E2)
+-- min build: 1207
+---@param ped number
+---@param disabled boolean
+---@return any
+function SetIsScriptedSpeechDisabled(ped, disabled) end
+
+-- SET_PED_INTERIOR_WALLA_DENSITY  (0x8BF907833BE275DE)
+-- min build: 1207
+---@param p0 number
+---@param p1 number
+function SetPedInteriorWallaDensity(p0, p1) end
+
+-- SET_PED_IS_DRUNK  (0x95D2D383D5396B8A)
+-- min build: 1207
+---@param ped number
+---@param toggle boolean
+function SetPedIsDrunk(ped, toggle) end
+
+-- SET_PED_WALLA_DENSITY  (0x149AEE66F0CB3A99)
+-- https://en.m.wikipedia.org/wiki/Walla
+-- min build: 1207
+---@param p0 number
+---@param p1 number
+function SetPedWallaDensity(p0, p1) end
+
+-- SET_PORTAL_SETTINGS_OVERRIDE  (0x044DBAD7A7FA2BE5)
+-- min build: 1207
+---@param p0 string
+---@param p1 string
+function SetPortalSettingsOverride(p0, p1) end
+
+-- SET_STATIC_EMITTER_ENABLED  (0x399D2D3B33F1B8EB)
+-- min build: 1207
+---@param emitterName string
+---@param toggle boolean
+function SetStaticEmitterEnabled(emitterName, toggle) end
+
+-- SKIP_TO_NEXT_SCRIPTED_CONVERSATION_LINE  (0x9663FE6B7A61EB00)
+-- min build: 1207
+---@param p0 string
+function SkipToNextScriptedConversationLine(p0) end
+
+-- START_AUDIO_SCENE  (0x013A80FC08F6E4F2)
+-- min build: 1207
+---@param scene string
+---@return boolean
+function StartAudioScene(scene) end
+
+-- START_PRELOADED_CONVERSATION  (0x23641AFE870AF385)
+-- min build: 1207
+---@param convoRoot string
+function StartPreloadedConversation(convoRoot) end
+
+-- START_SCRIPT_CONVERSATION  (0x6B17C62C9635D2DC)
+-- min build: 1207
+---@param convoRoot string
+---@param p1 boolean
+---@param p2 boolean
+---@param clone boolean
+function StartScriptConversation(convoRoot, p1, p2, clone) end
+
+-- STOP_AUDIO_SCENE  (0xDFE8422B3B94E688)
+-- min build: 1207
+---@param scene string
+function StopAudioScene(scene) end
+
+-- STOP_AUDIO_SCENES  (0xBAC7FC81A75EC1A1)
+-- min build: 1207
+function StopAudioScenes() end
+
+-- STOP_CURRENT_PLAYING_AMBIENT_SPEECH  (0xB8BEC0CA6F0EDB0F)
+-- min build: 1207
+---@param ped number
+---@param p1 any
+function StopCurrentPlayingAmbientSpeech(ped, p1) end
+
+-- STOP_CURRENT_PLAYING_SPEECH  (0x79D2F0E66F81D90D)
+-- min build: 1207
+---@param ped number
+---@param p1 any
+function StopCurrentPlayingSpeech(ped, p1) end
+
+-- STOP_PED_SPEAKING  (0x9D64D7405520E3D3)
+-- min build: 1207
+---@param ped number
+---@param shaking boolean
+function StopPedSpeaking(ped, shaking) end
+
+-- STOP_SCRIPTED_CONVERSATION  (0xD79DEEFB53455EBA)
+-- min build: 1207
+---@param p0 string
+---@param p1 boolean
+---@param p2 boolean
+---@return number
+function StopScriptedConversation(p0, p1, p2) end
+
+-- STOP_STREAM  (0xA4718A1419D18151)
+-- min build: 1207
+---@param streamId number
+function StopStream(streamId) end
+
+-- TRIGGER_MUSIC_EVENT  (0x706D57B0F50DA710)
+-- https://github.com/femga/rdr3_discoveries/blob/master/audio/music_events/music_events.lua
+-- min build: 1207
+---@param eventName string
+---@return boolean
+function TriggerMusicEvent(eventName) end
+
+-- UNREGISTER_SCRIPT_WITH_AUDIO  (0xA8638BE228D4751A)
+-- nullsub, doesn't do anything
+-- min build: 1207
+function UnregisterScriptWithAudio() end
+
+-- USE_FOOTSTEP_SCRIPT_SWEETENERS  (0xBF4DC1784BE94DFA)
+-- min build: 1207
+---@param ped number
+---@param p1 boolean
+---@param hash number
+function UseFootstepScriptSweeteners(ped, p1, hash) end
