@@ -249,7 +249,8 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
                 pageClass.RegisteredElements[elemID].data = TableMerge(pageClass.RegisteredElements[elemID].data,
                     newElemData)
 
-                if FeatherMenu.activeMenu.menuID == menuID and menuClass.RegisteredPages[pageID].active == true then
+                if FeatherMenu.activeMenu and FeatherMenu.activeMenu.menuID == menuID
+                    and menuClass.RegisteredPages[pageID].active == true then
                     local event = {
                         action = 'updateelement',
                         menuid = menuID,
@@ -283,6 +284,7 @@ function FeatherMenu:RegisterMenu(menuID, config, callbacks)
 
             function elemClass:UnRegister()
                 pageClass.RegisteredElements[elemID] = nil
+                pageClass.RegistedElementsClasses[elemID] = nil
             end
 
             pageClass.RegistedElementsClasses[elemID] = elemClass

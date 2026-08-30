@@ -60,7 +60,7 @@
       v-if="element.type === 'dropdown'"
       :element="element"
       :options="element.data.options"
-      :value="element.data.selectedValue"
+      :model-value="element.data.selectedValue"
       :placeholder="element.data.placeholder || 'Select an option'"
     />
     <ImageBoxContainer
