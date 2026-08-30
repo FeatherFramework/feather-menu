@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import api from "../api";
 
 const props = defineProps({
@@ -82,15 +82,18 @@ const selectOption = (option) => {
   }
 };
 
-// Set the initial selected option based on the modelValue
-if (props.modelValue !== null) {
-  const initialOption = props.options.find(
-    (opt) => opt.value === props.modelValue
-  );
-  if (initialOption) {
-    selectedOption.value = initialOption.text;
-  }
-}
+const syncSelectedOption = () => {
+  const option = props.options.find((entry) => entry.value === props.modelValue);
+  selectedOption.value = option?.text ?? null;
+};
+
+// Settings providers refresh their value whenever the menu opens. Reflect
+// those Lua-side element updates instead of only reading modelValue once when
+// this component happens to mount.
+watch(() => [props.modelValue, props.options], syncSelectedOption, {
+  immediate: true,
+  deep: true,
+});
 </script>
 
 <style scoped>

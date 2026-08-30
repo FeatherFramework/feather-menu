@@ -65,6 +65,12 @@ end)
 menu:Open({ startupPage = page })
 ```
 
+Elements support `element:update(data)` and `element:UnRegister()`. Removing an
+element also removes its callback; as with existing menu implementations, the
+visible page reflects structural changes when it is next reopened. Dropdowns
+react to later `selectedValue` updates, allowing a menu owner to reconcile
+provider-backed values whenever a menu opens.
+
 ## Multiple Menus
 
 Multiple menus can be registered and opened simultaneously. By default, opening a menu will close any currently active menu (`overrideMenu = true`). Set `overrideMenu = false` to block opening if another menu is already open.
